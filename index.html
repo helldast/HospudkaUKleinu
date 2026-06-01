@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospůdka u Radegastu</title>
+  <meta name="description" content="Hospůdka u Radegastu – poctivé grilované a zauzené maso, masitá žebra, buffalo speciality a skvělá piva. Otevřeno denně 15:00–22:00." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">u&nbsp;<span>Radegastu</span></a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#objednavky">Na&nbsp;objednání</a></li>
+      <li><a href="#o-nas">O&nbsp;nás</a></li>
+      <li><a href="#kontakt" class="cta">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile drawer -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#menu"      onclick="closeMob()">Menu</a>
+  <a href="#objednavky" onclick="closeMob()">Na objednání</a>
+  <a href="#o-nas"     onclick="closeMob()">O nás</a>
+  <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<!-- Swap .hero-img background with your photo when ready -->
+<section class="hero" id="uvod">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Otevřeno denně 15:00&nbsp;–&nbsp;22:00</div>
+    <h1>Hospůdka<br><em>u&nbsp;Radegastu</em></h1>
+    <p class="hero-sub">Poctivé grilované &amp; zauzené maso · Skvělá piva</p>
+    <div class="hero-btns">
+      <a href="#menu"       class="btn btn-fill">Prohlédnout menu</a>
+      <a href="#objednavky" class="btn btn-outline">Objednávka na akci</a>
+    </div>
+    <div class="hero-info">
+      <div class="hero-info-item">
+        <div class="hi-label">Dny</div>
+        <div class="hi-val">Denně</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hi-label">Od</div>
+        <div class="hi-val">15:00</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hi-label">Do</div>
+        <div class="hi-val">22:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MENU ══════════════ -->
+<section id="menu">
+  <div class="container">
+    <div class="sec-header">
+      <div class="label">Naše nabídka</div>
+      <h2 class="title">Menu</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs" role="tablist">
+      <button class="tab-btn on" onclick="switchTab(event,'grill')"   role="tab">🔥 Grilované speciality</button>
+      <button class="tab-btn"    onclick="switchTab(event,'minutky')" role="tab">⚡ Minutky</button>
+      <button class="tab-btn"    onclick="switchTab(event,'prilohy')" role="tab">🍟 Přílohy</button>
+      <button class="tab-btn"    onclick="switchTab(event,'napoje')"  role="tab">🍺 Nápoje</button>
+    </div>
+
+    <!-- GRILOVANÉ SPECIALITY -->
+    <div class="tab-panel on" id="tp-grill">
+      <div class="grill-grid">
+        <div class="gcard">
+          <div class="gcard-img">🍖</div>
+          <!-- Swap .gcard-img background-image with real photo: -->
+          <!-- style="background-image:url('foto-koleno.jpg');background-size:cover" -->
+          <div class="gcard-body">
+            <div class="gcard-name">Pomalu pečené a zauzené koleno</div>
+            <div class="gcard-note">Šťavnaté koleno uzené na dřevě</div>
+            <div class="gcard-price">Cena</div>
+          </div>
+        </div>
+        <div class="gcard">
+          <div class="gcard-img">🥩</div>
+          <div class="gcard-body">
+            <div class="gcard-name">Žebra masitá</div>
+            <div class="gcard-note">Poctivá masitá žebra z grilu</div>
+            <div class="gcard-price">Cena</div>
+          </div>
+        </div>
+        <div class="gcard">
+          <div class="gcard-img">🍗</div>
+          <div class="gcard-body">
+            <div class="gcard-name">Kuřata</div>
+            <div class="gcard-note">Celá grilovaná kuřata</div>
+            <div class="gcard-price">Cena</div>
+          </div>
+        </div>
+        <div class="gcard">
+          <div class="gcard-img">🌶️</div>
+          <div class="gcard-body">
+            <div class="gcard-name">Buffalo křídla</div>
+            <div class="gcard-note">Pikantní křídla v buffalo omáčce</div>
+            <div class="gcard-price">Cena</div>
+          </div>
+        </div>
+        <div class="gcard">
+          <div class="gcard-img">🔥</div>
+          <div class="gcard-body">
+            <div class="gcard-name">Buffalo kuřecí špalíky</div>
+            <div class="gcard-note">Špalíky s buffalo marinádou</div>
+            <div class="gcard-price">Cena</div>
+          </div>
+        </div>
+      </div>
+      <p class="grill-footer">Aktuální ceny a dostupnost zjistíte přímo u nás nebo telefonicky. Nabídka se může lišit dle dne.</p>
+    </div>
+
+    <!-- MINUTKY -->
+    <div class="tab-panel" id="tp-minutky">
+      <div class="mlist">
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Smažený sýr + hranolky</div>
+            <div class="mitem-detail">Zlatavý smažený sýr s domácími hranolkami</div>
+          </div>
+          <div class="mitem-price">115&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Smažený hermelín + hranolky</div>
+            <div class="mitem-detail">Křupavý smažený hermelín s hranolkami</div>
+          </div>
+          <div class="mitem-price">125&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Kuřecí řízek + americké brambory</div>
+            <div class="mitem-detail">Šťavnatý kuřecí řízek s americkými bramborami</div>
+          </div>
+          <div class="mitem-price">145&nbsp;Kč</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PŘÍLOHY -->
+    <div class="tab-panel" id="tp-prilohy">
+      <div class="mlist">
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Hranolky velké</div>
+            <div class="mitem-detail">250&nbsp;g</div>
+          </div>
+          <div class="mitem-price">69&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Hranolky BBQ Cheese</div>
+            <div class="mitem-detail">250&nbsp;g — s BBQ omáčkou a sýrem</div>
+          </div>
+          <div class="mitem-price">93&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Cibulové kroužky</div>
+            <div class="mitem-detail">10&nbsp;ks — křupavé v těstíčku</div>
+          </div>
+          <div class="mitem-price">76&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Krokety</div>
+            <div class="mitem-detail">250&nbsp;g</div>
+          </div>
+          <div class="mitem-price">69&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Americké brambory</div>
+            <div class="mitem-detail">250&nbsp;g</div>
+          </div>
+          <div class="mitem-price">72&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Americké brambory Cheese</div>
+            <div class="mitem-detail">250&nbsp;g — se sýrovou omáčkou</div>
+          </div>
+          <div class="mitem-price">93&nbsp;Kč</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NÁPOJE (placeholder) -->
+    <div class="tab-panel" id="tp-napoje">
+      <div class="mlist">
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Radegast 10°</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">43&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Radegast 12°</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">46&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Pilsner Urquell</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">51&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Zubr 11°</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">44&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Zubr 12°</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">45&nbsp;Kč</div>
+        </div>
+        <div class="mitem">
+          <div>
+            <div class="mitem-name">Gustav 13°</div>
+            <div class="mitem-detail">0,5&nbsp;l točený</div>
+          </div>
+          <div class="mitem-price">49&nbsp;Kč</div>
+        </div>
+      </div>
+      <div class="tab-note">* Nápojový lístek bude brzy aktualizován. Na aktuální nabídku se ptejte přímo u nás.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ NA OBJEDNÁNÍ ══════════════ -->
+<section id="objednavky">
+  <div class="container">
+    <div class="sec-header">
+      <div class="label">Velké akce &amp; oslavy</div>
+      <h2 class="title" style="color:#FAFAF8">Na objednání</h2>
+      <p class="sec-desc" style="margin-top:14px;color:rgba(250,250,248,.5);max-width:520px;margin-left:auto;margin-right:auto;">
+        Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu.
+      </p>
+      <div class="divider" style="margin:14px auto 0;background:var(--gold)"></div>
+    </div>
+
+    <div class="ord-grid">
+      <div class="ocard">
+        <span class="ocard-icon">🐷</span>
+        <div class="ocard-name">Sele</div>
+        <div class="ocard-detail">cca&nbsp;20&nbsp;kg</div>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">🥩</span>
+        <div class="ocard-name">Kýta</div>
+        <div class="ocard-detail">13&nbsp;–&nbsp;17&nbsp;kg</div>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">🍖</span>
+        <div class="ocard-name">Roláda bučková</div>
+        <div class="ocard-detail">Na dotaz</div>
+      </div>
+      <div class="ocard">
+        <span class="ocard-icon">🥩</span>
+        <div class="ocard-name">RoastBeef</div>
+        <div class="ocard-detail">Hovězí nízký roštěnec</div>
+      </div>
+    </div>
+
+    <!--
+      FORMULÁŘ – nastavení:
+      1. Změňte e-mail v action="https://formsubmit.co/VAS-EMAIL@EMAIL.CZ"
+      2. Nastavte _next na URL vaší poděkování stránky (nebo vymažte)
+      3. Při prvním odeslání FormSubmit pošle ověřovací e-mail
+    -->
+    <div class="form-box">
+      <div class="form-hd">Poptávkový formulář</div>
+      <div class="form-sub">Vyplňte formulář a ozveme se vám do 24 hodin.</div>
+
+      <form id="orderForm"
+            action="https://formsubmit.co/VAS-EMAIL@EMAIL.CZ"
+            method="POST">
+        <!-- FormSubmit skrytá nastavení -->
+        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Radegastu">
+        <input type="hidden" name="_captcha"  value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="fg">
+          <div class="fgroup">
+            <label for="f-jmeno">Jméno a příjmení *</label>
+            <input id="f-jmeno" name="Jméno" type="text" placeholder="Jan Novák" required>
+          </div>
+          <div class="fgroup">
+            <label for="f-telefon">Telefon *</label>
+            <input id="f-telefon" name="Telefon" type="tel" placeholder="+420 XXX XXX XXX" required>
+          </div>
+          <div class="fgroup full">
+            <label for="f-email">E-mail *</label>
+            <input id="f-email" name="Email" type="email" placeholder="vas@email.cz" required>
+          </div>
+          <div class="fgroup">
+            <label for="f-polozka">Objednaná položka *</label>
+            <select id="f-polozka" name="Položka" required>
+              <option value="" disabled selected>Vyberte položku</option>
+              <option>Sele (~20 kg)</option>
+              <option>Kýta (13–17 kg)</option>
+              <option>Roláda bučková</option>
+              <option>RoastBeef – hovězí nízký roštěnec</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label for="f-datum">Datum akce *</label>
+            <input id="f-datum" name="Datum akce" type="date" required>
+          </div>
+          <div class="fgroup full">
+            <label for="f-poznamka">Počet osob / Poznámka</label>
+            <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-send">Odeslat poptávku →</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        ✅ Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ O NÁS ══════════════ -->
+<section id="o-nas">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="label">Náš příběh</div>
+        <h2>O hospůdce</h2>
+        <div class="divider"></div>
+        <!--
+          PLACEHOLDER TEXT – nahraďte vlastním textem o hospůdce:
+          historií, atmosférou, co vás dělá výjimečnými apod.
+        -->
+        <p>
+          Vítejte v Hospůdce u Radegastu – místě, kde se setkává poctivé grilované maso,
+          přátelská atmosféra a skvěle načepované pivo. Jsme malá hospůdka s velkou duší,
+          kde si každý host přijde na své.
+        </p>
+        <p>
+          Specializujeme se na pomalu uzené a grilované speciality připravované přímo na místě.
+          Ať přijdete na rychlou minutku nebo si vychutnáte naše celé zauzené koleno –
+          vždy se postaráme o to, aby vám chutnalo.
+        </p>
+        <p class="quote">
+          „Doplňte vlastní popis, historii nebo motto podniku."
+        </p>
+      </div>
+      <div class="photo-mosaic">
+        <!-- Nahradit: přidejte background-image: url('foto-X.jpg') na každý .ph -->
+        <div class="ph">Foto</div>
+        <div class="ph">Foto</div>
+        <div class="ph">Foto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ KONTAKT ══════════════ -->
+<section id="kontakt">
+  <div class="container">
+    <div class="sec-header">
+      <div class="label">Kde nás najdete</div>
+      <h2 class="title">Kontakt &amp; Místo</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- INFO -->
+      <div class="contact-items">
+        <div class="citem">
+          <div class="cicon">📍</div>
+          <div>
+            <div class="ci-lbl">Adresa</div>
+            <div class="ci-val">
+              Hospůdka u Radegastu<br>
+              <!-- Doplňte přesnou adresu -->
+              [Adresa bude doplněna]
+            </div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">📞</div>
+          <div>
+            <div class="ci-lbl">Telefon</div>
+            <div class="ci-val">
+              <!-- Doplňte telefonní číslo -->
+              <a href="tel:+420000000000">+420 XXX XXX XXX</a>
+            </div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">✉️</div>
+          <div>
+            <div class="ci-lbl">E-mail</div>
+            <div class="ci-val">
+              <!-- Doplňte e-mail -->
+              <a href="mailto:info@hospudkauradegastu.cz">info@hospudkauradegastu.cz</a>
+            </div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">🕒</div>
+          <div>
+            <div class="ci-lbl">Otevírací doba</div>
+            <div class="ci-val">
+              <table class="hours-tbl">
+                <tr><td>Pondělí</td><td>15:00 – 22:00</td></tr>
+                <tr><td>Úterý</td>  <td>15:00 – 22:00</td></tr>
+                <tr><td>Středa</td> <td>15:00 – 22:00</td></tr>
+                <tr><td>Čtvrtek</td><td>15:00 – 22:00</td></tr>
+                <tr><td>Pátek</td>  <td>15:00 – 22:00</td></tr>
+                <tr><td>Sobota</td> <td>15:00 – 22:00</td></tr>
+                <tr><td>Neděle</td> <td>15:00 – 22:00</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=49.8084353,18.2388796&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Hospůdka u Radegastu – mapa">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Hospůdka <span>u&nbsp;Radegastu</span></div>
+        <p class="footer-text">
+          Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
+          Rádi vás uvítáme každý den od 15:00.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigace</h4>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#objednavky">Na objednání</a></li>
+          <li><a href="#o-nas">O nás</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Otevírací doba</h4>
+        <ul>
+          <li><a>Denně</a></li>
+          <li><a>15:00 – 22:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Hospůdka u Radegastu. Všechna práva vyhrazena.</span>
+      <span>Vytvořeno s ❤️</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ JS ══════════════ -->
+<script>
+  /* --- navbar shadow on scroll --- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('up', window.scrollY > 8);
+  }, { passive: true });
+
+  /* --- hamburger / mobile drawer --- */
+  const burger   = document.getElementById('burger');
+  const mobMenu  = document.getElementById('mobMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobMenu.classList.toggle('open');
+  });
+  function closeMob() {
+    burger.classList.remove('open');
+    mobMenu.classList.remove('open');
+  }
+  /* close drawer when clicking outside */
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !mobMenu.contains(e.target)) closeMob();
+  });
+
+  /* --- menu tabs --- */
+  function switchTab(e, id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+    document.getElementById('tp-' + id).classList.add('on');
+    e.currentTarget.classList.add('on');
+  }
+
+  /* --- order form UX ---
+     Note: For real email delivery, replace action URL with your FormSubmit address.
+     On first submit, FormSubmit will send a verification email to that address.
+  */
+  const orderForm   = document.getElementById('orderForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  /* Set minimum date on date input to today */
+  const dateInput = document.getElementById('f-datum');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+</script>
+
+</body>
+</html>
