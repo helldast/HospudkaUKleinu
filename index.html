@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hospůdka u Radegastu</title>
-  <meta name="description" content="Hospůdka u Radegastu – poctivé grilované a zauzené maso, masitá žebra, buffalo speciality a skvělá piva. Otevřeno denně 15:00–22:00." />
+  <title>Hospůdka u Kleinů – Ostrava-jih</title>
+  <meta name="description" content="Hospůdka u Kleinů v Ostravě-Jihu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na oslavy. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
+  <link rel="icon" href="assets/stit.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 
 </head>
 
@@ -16,10 +17,14 @@
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Hospůdka u&nbsp;<span>Radegastu</span></a>
+    <a href="#" class="nav-logo">
+      <span class="logo-shield"><img src="assets/stit.svg" alt="" class="ls-bg"><img src="assets/zubr-logo.svg" alt="Zubr" class="ls-logo"></span>
+      <span>Hospůdka u&nbsp;<em>Kleinů</em></span>
+    </a>
     <ul class="nav-links">
+      <li><a href="#akce">Akce</a></li>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#objednavky">Na&nbsp;objednání</a></li>
+      <li><a href="#objednavky">Na&nbsp;objednávku</a></li>
       <li><a href="#o-nas">O&nbsp;nás</a></li>
       <li><a href="#kontakt" class="cta">Kontakt</a></li>
     </ul>
@@ -31,23 +36,24 @@
 
 <!-- mobile drawer -->
 <div class="mob-menu" id="mobMenu">
-  <a href="#menu"      onclick="closeMob()">Menu</a>
-  <a href="#objednavky" onclick="closeMob()">Na objednání</a>
+  <a href="#akce"       onclick="closeMob()">Akce</a>
+  <a href="#menu"       onclick="closeMob()">Menu</a>
+  <a href="#objednavky" onclick="closeMob()">Na objednávku</a>
   <a href="#o-nas"     onclick="closeMob()">O nás</a>
   <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
 </div>
 
 <!-- ══════════════ HERO ══════════════ -->
-<!-- Swap .hero-img background with your photo when ready -->
 <section class="hero" id="uvod">
-  <div class="hero-img"></div>
+  <div class="hero-img" id="heroImg"></div>
   <div class="hero-content">
-    <div class="hero-badge">Otevřeno denně 15:00&nbsp;–&nbsp;22:00</div>
-    <h1>Hospůdka<br><em>u&nbsp;Radegastu</em></h1>
-    <p class="hero-sub">Poctivé grilované &amp; zauzené maso · Skvělá piva</p>
+    <div class="hero-main">
+    <div class="hero-badge" id="heroBadge">Hospůdka u&nbsp;Kleinů · Ostrava-jih</div>
+    <h1 id="heroTitle">Velké znovuotevření<br><em>20.&nbsp;listopadu</em></h1>
+    <p class="hero-sub">Poctivé grilované &amp; zauzené maso · Zubr na čepu</p>
     <div class="hero-btns">
       <a href="#menu"       class="btn btn-fill">Prohlédnout menu</a>
-      <a href="#objednavky" class="btn btn-outline">Objednávka na akci</a>
+      <a href="#objednavky" class="btn btn-outline">Jídlo na objednávku</a>
     </div>
     <div class="hero-info">
       <div class="hero-info-item">
@@ -63,6 +69,36 @@
         <div class="hi-val">22:00</div>
       </div>
     </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Praktické informace">
+      <a href="#akce" class="hp-row hp-link">
+        <div class="hp-lbl" id="hpEvLbl">Chystáme</div>
+        <div class="hp-val" id="hpEvName">Speciální akce brzy doplníme</div>
+        <div class="hp-sub" id="hpEvDate"></div>
+      </a>
+      <div class="hp-row">
+        <div class="hp-lbl">Otevírací doba<span class="od-otevreni"></span></div>
+        <div class="hp-val">Denně 15:00 – 22:00</div>
+      </div>
+      <div class="hp-row">
+        <div class="hp-lbl">Kde nás najdete</div>
+        <div class="hp-val">Dolní 87/79, Ostrava-jih</div>
+        <a class="hp-sub" href="https://www.google.com/maps/dir/?api=1&destination=49.8084353,18.2388796">Naplánovat cestu</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════ SPECIÁLNÍ AKCE ══════════════ -->
+<section id="akce">
+  <div class="container">
+    <div class="sec-header">
+      <div class="label">Co chystáme</div>
+      <h2 class="title">Speciální akce</h2>
+      <div class="divider"></div>
+    </div>
+    <div id="akceObsah"></div>
   </div>
 </section>
 
@@ -77,55 +113,48 @@
 
     <!-- TABS -->
     <div class="tabs" role="tablist">
-      <button class="tab-btn on" onclick="switchTab(event,'grill')"   role="tab">🔥 Grilované<br class="mob-br"> speciality</button>
-      <button class="tab-btn"    onclick="switchTab(event,'minutky')" role="tab">⚡ Minutky</button>
-      <button class="tab-btn"    onclick="switchTab(event,'prilohy')" role="tab">🍟 Přílohy</button>
-      <button class="tab-btn"    onclick="switchTab(event,'napoje')"  role="tab">🍺 Nápoje</button>
+      <button class="tab-btn on" onclick="switchTab(event,'napoje')"  role="tab">Nápoje</button>
+      <button class="tab-btn"    onclick="switchTab(event,'grill')"   role="tab">Grilované<br class="mob-br"> speciality</button>
+      <button class="tab-btn"    onclick="switchTab(event,'minutky')" role="tab">Minutky</button>
+      <button class="tab-btn"    onclick="switchTab(event,'prilohy')" role="tab">Přílohy</button>
     </div>
 
     <!-- GRILOVANÉ SPECIALITY -->
-    <div class="tab-panel on" id="tp-grill">
+    <div class="tab-panel" id="tp-grill">
       <div class="grill-grid">
         <div class="gcard">
-          <div class="gcard-img">🍖</div>
-          <!-- Swap .gcard-img background-image with real photo: -->
-          <!-- style="background-image:url('foto-koleno.jpg');background-size:cover" -->
+          <div class="gcard-img"></div>
           <div class="gcard-body">
             <div class="gcard-name">Pomalu pečené a zauzené koleno</div>
             <div class="gcard-note">Šťavnaté koleno uzené na dřevě</div>
-            <div class="gcard-price">Cena</div>
           </div>
         </div>
         <div class="gcard">
-          <div class="gcard-img">🥩</div>
+          <div class="gcard-img"></div>
           <div class="gcard-body">
             <div class="gcard-name">Žebra masitá</div>
             <div class="gcard-note">Poctivá masitá žebra z grilu</div>
-            <div class="gcard-price">Cena</div>
           </div>
         </div>
         <div class="gcard">
-          <div class="gcard-img">🍗</div>
+          <div class="gcard-img"></div>
           <div class="gcard-body">
             <div class="gcard-name">Kuřata</div>
             <div class="gcard-note">Celá grilovaná kuřata</div>
-            <div class="gcard-price">Cena</div>
           </div>
         </div>
         <div class="gcard">
-          <div class="gcard-img">🌶️</div>
+          <div class="gcard-img"></div>
           <div class="gcard-body">
             <div class="gcard-name">Buffalo křídla</div>
             <div class="gcard-note">Pikantní křídla v buffalo omáčce</div>
-            <div class="gcard-price">Cena</div>
           </div>
         </div>
         <div class="gcard">
-          <div class="gcard-img">🔥</div>
+          <div class="gcard-img"></div>
           <div class="gcard-body">
             <div class="gcard-name">Buffalo kuřecí špalíky</div>
             <div class="gcard-note">Špalíky s buffalo marinádou</div>
-            <div class="gcard-price">Cena</div>
           </div>
         </div>
       </div>
@@ -140,21 +169,18 @@
             <div class="mitem-name">Smažený sýr + hranolky</div>
             <div class="mitem-detail">Zlatavý smažený sýr s domácími hranolkami</div>
           </div>
-          <div class="mitem-price">115&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Smažený hermelín + hranolky</div>
             <div class="mitem-detail">Křupavý smažený hermelín s hranolkami</div>
           </div>
-          <div class="mitem-price">125&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Kuřecí řízek + americké brambory</div>
             <div class="mitem-detail">Šťavnatý kuřecí řízek s americkými bramborami</div>
           </div>
-          <div class="mitem-price">145&nbsp;Kč</div>
         </div>
       </div>
     </div>
@@ -167,94 +193,51 @@
             <div class="mitem-name">Hranolky velké</div>
             <div class="mitem-detail">250&nbsp;g</div>
           </div>
-          <div class="mitem-price">69&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Hranolky BBQ Cheese</div>
             <div class="mitem-detail">250&nbsp;g — s BBQ omáčkou a sýrem</div>
           </div>
-          <div class="mitem-price">93&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Cibulové kroužky</div>
             <div class="mitem-detail">10&nbsp;ks — křupavé v těstíčku</div>
           </div>
-          <div class="mitem-price">76&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Krokety</div>
             <div class="mitem-detail">250&nbsp;g</div>
           </div>
-          <div class="mitem-price">69&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Americké brambory</div>
             <div class="mitem-detail">250&nbsp;g</div>
           </div>
-          <div class="mitem-price">72&nbsp;Kč</div>
         </div>
         <div class="mitem">
           <div>
             <div class="mitem-name">Americké brambory Cheese</div>
             <div class="mitem-detail">250&nbsp;g — se sýrovou omáčkou</div>
           </div>
-          <div class="mitem-price">93&nbsp;Kč</div>
         </div>
       </div>
     </div>
 
-    <!-- NÁPOJE (placeholder) -->
-    <div class="tab-panel" id="tp-napoje">
+    <!-- NÁPOJE -->
+    <div class="tab-panel on" id="tp-napoje">
       <div class="mlist">
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Radegast 10°</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">43&nbsp;Kč</div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Radegast 12°</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">46&nbsp;Kč</div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Pilsner Urquell</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">51&nbsp;Kč</div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Zubr 11°</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">44&nbsp;Kč</div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Zubr 12°</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">45&nbsp;Kč</div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Gustav 13°</div>
-            <div class="mitem-detail">0,5&nbsp;l točený</div>
-          </div>
-          <div class="mitem-price">49&nbsp;Kč</div>
-        </div>
+        <div class="mitem"><div><div class="mitem-name">Zubr 11°</div><div class="mitem-detail">točený</div></div></div>
+        <div class="mitem"><div><div class="mitem-name">Zubr 12°</div><div class="mitem-detail">točený</div></div></div>
+        <div class="mitem"><div><div class="mitem-name">Gustav 13°</div><div class="mitem-detail">točený</div></div></div>
+        <div class="mitem"><div><div class="mitem-name">Litovel</div><div class="mitem-detail">točený</div></div></div>
       </div>
-      <div class="tab-note">* Nápojový lístek bude brzy aktualizován. Na aktuální nabídku se ptejte přímo u nás.</div>
     </div>
+
+    <div class="tab-note">Nový jídelní a nápojový lístek s cenami doplníme před otevřením. Nabídka se ještě může změnit.</div>
 
   </div>
 </section>
@@ -263,54 +246,40 @@
 <section id="objednavky">
   <div class="container">
     <div class="sec-header">
-      <div class="label">Velké akce &amp; oslavy</div>
-      <h2 class="title" style="color:#FAFAF8">Na objednání</h2>
-      <p class="sec-desc" style="margin-top:14px;color:rgba(250,250,248,.5);max-width:520px;margin-left:auto;margin-right:auto;">
-        Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu.
+      <div class="label">Akce &amp; oslavy</div>
+      <h2 class="title" style="color:#FFFFFF">Jídlo na objednávku</h2>
+      <p class="sec-desc" style="margin-top:14px;color:rgba(255,255,255,.8);max-width:520px;margin-left:auto;margin-right:auto;">
+        Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu. Nerozvážíme, jídlo připravujeme jen na objednané akce a oslavy.
       </p>
       <div class="divider" style="margin:14px auto 0;background:var(--gold)"></div>
     </div>
 
     <div class="ord-grid">
       <div class="ocard">
-        <span class="ocard-icon">🐷</span>
         <div class="ocard-name">Sele</div>
         <div class="ocard-detail">cca&nbsp;20&nbsp;kg</div>
       </div>
       <div class="ocard">
-        <span class="ocard-icon">🥩</span>
         <div class="ocard-name">Kýta</div>
         <div class="ocard-detail">13&nbsp;–&nbsp;17&nbsp;kg</div>
       </div>
       <div class="ocard">
-        <span class="ocard-icon">🍖</span>
-        <div class="ocard-name">Roláda bučková</div>
+        <div class="ocard-name">Roláda bůčková</div>
         <div class="ocard-detail">Na dotaz</div>
       </div>
       <div class="ocard">
-        <span class="ocard-icon">🥩</span>
         <div class="ocard-name">RoastBeef</div>
         <div class="ocard-detail">Hovězí nízký roštěnec</div>
       </div>
     </div>
 
-    <!--
-      FORMULÁŘ – nastavení:
-      1. Změňte e-mail v action="https://formsubmit.co/VAS-EMAIL@EMAIL.CZ"
-      2. Nastavte _next na URL vaší poděkování stránky (nebo vymažte)
-      3. Při prvním odeslání FormSubmit pošle ověřovací e-mail
-    -->
     <div class="form-box">
       <div class="form-hd">Poptávkový formulář</div>
-      <div class="form-sub">Vyplňte formulář a ozveme se vám do 24 hodin.</div>
+      <div class="form-sub">Vyplňte formulář a ozveme se vám.</div>
 
-      <form id="orderForm"
-            action="https://formsubmit.co/VAS-EMAIL@EMAIL.CZ"
-            method="POST">
-        <!-- FormSubmit skrytá nastavení -->
-        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Radegastu">
-        <input type="hidden" name="_captcha"  value="false">
-        <input type="hidden" name="_template" value="table">
+      <div class="form-off" id="formOff" hidden></div>
+      <form id="orderForm">
+        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinů">
         <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="fg">
@@ -332,7 +301,7 @@
               <option value="" disabled selected>Vyberte položku</option>
               <option>Sele (~20 kg)</option>
               <option>Kýta (13–17 kg)</option>
-              <option>Roláda bučková</option>
+              <option>Roláda bůčková</option>
               <option>RoastBeef – hovězí nízký roštěnec</option>
             </select>
           </div>
@@ -345,11 +314,9 @@
             <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
           </div>
         </div>
-        <button type="submit" class="btn-send">Odeslat poptávku →</button>
+        <button type="submit" class="btn-send" id="formBtn">Odeslat poptávku →</button>
       </form>
-      <div class="form-success" id="formSuccess">
-        ✅ Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.
-      </div>
+      <div class="form-success" id="formSuccess" role="status"></div>
     </div>
 
   </div>
@@ -363,13 +330,9 @@
         <div class="label">Náš příběh</div>
         <h2>O hospůdce</h2>
         <div class="divider"></div>
-        <!--
-          PLACEHOLDER TEXT – nahraďte vlastním textem o hospůdce:
-          historií, atmosférou, co vás dělá výjimečnými apod.
-        -->
         <p>
-          Vítejte v Hospůdce u Radegastu – místě, kde se setkává poctivé grilované maso,
-          přátelská atmosféra a skvěle načepované pivo. Jsme malá hospůdka s velkou duší,
+          Vítejte v Hospůdce u Kleinů – místě, kde se setkává poctivé grilované maso,
+          přátelská atmosféra a skvěle načepovaný Zubr. Interiér je celý nový. Jsme malá hospůdka s velkou duší,
           kde si každý host přijde na své.
         </p>
         <p>
@@ -377,15 +340,11 @@
           Ať přijdete na rychlou minutku nebo si vychutnáte naše celé zauzené koleno –
           vždy se postaráme o to, aby vám chutnalo.
         </p>
-        <p class="quote">
-          „Doplňte vlastní popis, historii nebo motto podniku."
-        </p>
       </div>
-      <div class="photo-mosaic">
-        <!-- Nahradit: přidejte background-image: url('foto-X.jpg') na každý .ph -->
-        <div class="ph">Foto</div>
-        <div class="ph">Foto</div>
-        <div class="ph">Foto</div>
+      <div class="photo-mosaic" id="mozaika">
+        <div class="ph">Fotky brzy</div>
+        <div class="ph">Fotky brzy</div>
+        <div class="ph">Fotky brzy</div>
       </div>
     </div>
   </div>
@@ -404,39 +363,37 @@
       <!-- INFO -->
       <div class="contact-items">
         <div class="citem">
-          <div class="cicon">📍</div>
+          <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></div>
           <div>
             <div class="ci-lbl">Adresa</div>
             <div class="ci-val">
-              Hospůdka u Radegastu<br>
+              Hospůdka u Kleinů<br>
               Dolní 87/79, 700 30 Ostrava-jih
             </div>
           </div>
         </div>
-        <div class="citem">
-          <div class="cicon">📞</div>
+        <div class="citem" id="rowTel" hidden>
+          <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l1.500 5-2 1.500a12 12 0 0 0 6 6l1.500-2 5 1.500v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
           <div>
             <div class="ci-lbl">Telefon</div>
             <div class="ci-val">
-              <!-- Doplňte telefonní číslo -->
-              <a href="tel:+420000000000">+420 XXX XXX XXX</a>
+              <a id="linkTel"></a>
             </div>
           </div>
         </div>
-        <div class="citem">
-          <div class="cicon">✉️</div>
+        <div class="citem" id="rowMail" hidden>
+          <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.500"/><path d="M3.500 6.500 12 13l8.500-6.500"/></svg></div>
           <div>
             <div class="ci-lbl">E-mail</div>
             <div class="ci-val">
-              <!-- Doplňte e-mail -->
-              <a href="mailto:info@hospudkauradegastu.cz">xxx@xxxx.cz</a>
+              <a id="linkMail"></a>
             </div>
           </div>
         </div>
         <div class="citem">
-          <div class="cicon">🕒</div>
+          <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></div>
           <div>
-            <div class="ci-lbl">Otevírací doba</div>
+            <div class="ci-lbl">Otevírací doba<span class="od-otevreni"></span></div>
             <div class="ci-val">
               <table class="hours-tbl">
                 <tr><td>Pondělí</td><td>15:00 – 22:00</td></tr>
@@ -458,7 +415,7 @@
           src="https://maps.google.com/maps?q=49.8084353,18.2388796&t=&z=16&ie=UTF8&iwloc=&output=embed"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Hospůdka u Radegastu – mapa">
+          title="Hospůdka u Kleinů – mapa">
         </iframe>
       </div>
     </div>
@@ -470,17 +427,18 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">Hospůdka <span>u&nbsp;Radegastu</span></div>
+        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
         <p class="footer-text">
           Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
-          Rádi vás uvítáme každý den od 15:00.
+          Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
         </p>
       </div>
       <div class="footer-col">
         <h4>Navigace</h4>
         <ul>
+          <li><a href="#akce">Akce</a></li>
           <li><a href="#menu">Menu</a></li>
-          <li><a href="#objednavky">Na objednání</a></li>
+          <li><a href="#objednavky">Na objednávku</a></li>
           <li><a href="#o-nas">O nás</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
@@ -494,12 +452,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Hospůdka u Radegastu. Všechna práva vyhrazena.</span>
+      <span>© 2026 Hospůdka u Kleinů. Všechna práva vyhrazena.</span>
       <span>Vytvořil Adam Biely</span>
     </div>
   </div>
 </footer>
 
+<script src="nastaveni.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
