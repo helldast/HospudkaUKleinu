@@ -33,7 +33,7 @@ window.WEB = {
       nazev: "Velké znovuotevření",
       datum: "2026-11-20",
       cas: "",
-      popis: "Nový interiér, nová piva a první večer v novém.",
+      popis: "Nový interiér, mistr výčepní, jednotná cena piva 38 Kč po celý víkend",
       cena: "",
       foto: ""
     }

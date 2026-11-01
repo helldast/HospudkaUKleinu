@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hospůdka u Kleinů – Ostrava-jih</title>
-  <meta name="description" content="Hospůdka u Kleinů v Ostravě-Jihu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na oslavy. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
+  <title>Hospůdka u Kleinu – Ostrava-Zábřeh</title>
+  <meta name="description" content="Hospůdka u Kleinu v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
   <link rel="icon" href="assets/stit.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
 </head>
 
 <body>
+<!-- ══════════════ PROUŽEK S NOVINKOU ══════════════ -->
+<a href="#akce" class="strip" id="strip">Velké znovuotevření · pátek 20. listopadu</a>
+
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <span class="logo-shield"><img src="assets/stit.svg" alt="" class="ls-bg"><img src="assets/zubr-logo.svg" alt="Zubr" class="ls-logo"></span>
-      <span>Hospůdka u&nbsp;<em>Kleinů</em></span>
+      <span>Hospůdka u&nbsp;<em>Kleinu</em></span>
     </a>
     <ul class="nav-links">
       <li><a href="#akce">Akce</a></li>
@@ -32,60 +35,40 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-</nav>
 
-<!-- mobile drawer -->
-<div class="mob-menu" id="mobMenu">
-  <a href="#akce"       onclick="closeMob()">Akce</a>
-  <a href="#menu"       onclick="closeMob()">Menu</a>
-  <a href="#objednavky" onclick="closeMob()">Na objednávku</a>
-  <a href="#o-nas"     onclick="closeMob()">O nás</a>
-  <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
-</div>
+  <!-- mobile drawer -->
+  <div class="mob-menu" id="mobMenu">
+    <a href="#akce"       onclick="closeMob()">Akce</a>
+    <a href="#menu"       onclick="closeMob()">Menu</a>
+    <a href="#objednavky" onclick="closeMob()">Na objednávku</a>
+    <a href="#o-nas"     onclick="closeMob()">O nás</a>
+    <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
+  </div>
+</nav>
 
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero" id="uvod">
   <div class="hero-img" id="heroImg"></div>
   <div class="hero-content">
     <div class="hero-main">
-    <div class="hero-badge" id="heroBadge">Hospůdka u&nbsp;Kleinů · Ostrava-jih</div>
-    <h1 id="heroTitle">Velké znovuotevření<br><em>20.&nbsp;listopadu</em></h1>
-    <p class="hero-sub">Poctivé grilované &amp; zauzené maso · Zubr na čepu</p>
-    <div class="hero-btns">
-      <a href="#menu"       class="btn btn-fill">Prohlédnout menu</a>
-      <a href="#objednavky" class="btn btn-outline">Jídlo na objednávku</a>
-    </div>
-    <div class="hero-info">
-      <div class="hero-info-item">
-        <div class="hi-label">Dny</div>
-        <div class="hi-val">Denně</div>
+      <h1>U&nbsp;nás se pivo<br><em>čepuje s&nbsp;citem</em></h1>
+      <p class="hero-sub">Poctivé grilované a&nbsp;zauzené maso. Malá hospůdka v&nbsp;Ostravě-Zábřehu.</p>
+      <div class="hero-btns">
+        <a href="#menu"       class="btn btn-fill">Prohlédnout menu</a>
+        <a href="#objednavky" class="btn btn-outline">Jídlo na objednávku</a>
       </div>
-      <div class="hero-info-item">
-        <div class="hi-label">Od</div>
-        <div class="hi-val">15:00</div>
-      </div>
-      <div class="hero-info-item">
-        <div class="hi-label">Do</div>
-        <div class="hi-val">22:00</div>
-      </div>
-    </div>
     </div>
 
-    <aside class="hero-panel" aria-label="Praktické informace">
-      <a href="#akce" class="hp-row hp-link">
-        <div class="hp-lbl" id="hpEvLbl">Chystáme</div>
-        <div class="hp-val" id="hpEvName">Speciální akce brzy doplníme</div>
-        <div class="hp-sub" id="hpEvDate"></div>
-      </a>
-      <div class="hp-row">
-        <div class="hp-lbl">Otevírací doba<span class="od-otevreni"></span></div>
-        <div class="hp-val">Denně 15:00 – 22:00</div>
-      </div>
-      <div class="hp-row">
-        <div class="hp-lbl">Kde nás najdete</div>
-        <div class="hp-val">Dolní 87/79, Ostrava-jih</div>
-        <a class="hp-sub" href="https://www.google.com/maps/dir/?api=1&destination=49.8084353,18.2388796">Naplánovat cestu</a>
-      </div>
+    <aside class="hero-tap">
+      <h2 class="tap-h">Na čepu</h2>
+      <ul class="tap-list">
+        <li>Zubr 11°</li>
+        <li>Zubr 12°</li>
+        <li>Gustav 13°</li>
+        <li>Litovel</li>
+      </ul>
+      <p class="tap-facts">Denně 15:00 – 22:00<span class="od-otevreni"></span><br>
+        Dolní 2354/85, 700 30 Ostrava-Zábřeh<br><a href="https://www.google.com/maps/dir/?api=1&destination=49.8083669,18.2391261">Naplánovat cestu</a></p>
     </aside>
   </div>
 </section>
@@ -114,130 +97,145 @@
     <!-- TABS -->
     <div class="tabs" role="tablist">
       <button class="tab-btn on" onclick="switchTab(event,'napoje')"  role="tab">Nápoje</button>
-      <button class="tab-btn"    onclick="switchTab(event,'grill')"   role="tab">Grilované<br class="mob-br"> speciality</button>
+      <button class="tab-btn"    onclick="switchTab(event,'grill')"   role="tab">Grilované speciality</button>
       <button class="tab-btn"    onclick="switchTab(event,'minutky')" role="tab">Minutky</button>
       <button class="tab-btn"    onclick="switchTab(event,'prilohy')" role="tab">Přílohy</button>
     </div>
 
-    <!-- GRILOVANÉ SPECIALITY -->
-    <div class="tab-panel" id="tp-grill">
-      <div class="grill-grid">
-        <div class="gcard">
-          <div class="gcard-img"></div>
-          <div class="gcard-body">
-            <div class="gcard-name">Pomalu pečené a zauzené koleno</div>
-            <div class="gcard-note">Šťavnaté koleno uzené na dřevě</div>
-          </div>
+    <!-- Na PC dva sloupce se všemi kategoriemi, na telefonu záložky -->
+    <div class="menu-book">
+      <div class="menu-col">
+      <div class="tab-panel on" id="tp-napoje">
+        <h3 class="menu-h">Nápoje</h3>
+        <div class="mlist">
+          <div class="mitem"><div><div class="mitem-name">Zubr 11°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Zubr 12°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Gustav 13°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Litovel</div><div class="mitem-detail">točený</div></div></div>
         </div>
-        <div class="gcard">
-          <div class="gcard-img"></div>
-          <div class="gcard-body">
-            <div class="gcard-name">Žebra masitá</div>
-            <div class="gcard-note">Poctivá masitá žebra z grilu</div>
+        <!-- LÍSTEK: čárkovací lístek, jde smazat celý až po KONEC LÍSTKU -->
+        <div class="listek">
+          <div class="listek-hd">Váš lístek</div>
+          <div class="listek-carky" id="listekCarky" aria-hidden="true"></div>
+          <p class="listek-pocet" id="listekPocet" aria-live="polite">Zatím čistý</p>
+          <div class="listek-btns">
+            <button type="button" class="listek-btn" id="listekPridat">Ještě jedno</button>
+            <button type="button" class="listek-btn listek-btn-2" id="listekNovy" hidden>Nový lístek</button>
           </div>
+          <p class="listek-pozn">Jen pro zábavu. Ten pravý vám napíšeme u stolu.</p>
         </div>
-        <div class="gcard">
-          <div class="gcard-img"></div>
-          <div class="gcard-body">
-            <div class="gcard-name">Kuřata</div>
-            <div class="gcard-note">Celá grilovaná kuřata</div>
+        <!-- KONEC LÍSTKU -->
+      </div>
+      <div class="tab-panel" id="tp-minutky">
+        <h3 class="menu-h">Minutky</h3>
+        <div class="mlist">
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Smažený sýr + hranolky</div>
+              <div class="mitem-detail">Zlatavý smažený sýr s domácími hranolkami</div>
+            </div>
           </div>
-        </div>
-        <div class="gcard">
-          <div class="gcard-img"></div>
-          <div class="gcard-body">
-            <div class="gcard-name">Buffalo křídla</div>
-            <div class="gcard-note">Pikantní křídla v buffalo omáčce</div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Smažený hermelín + hranolky</div>
+              <div class="mitem-detail">Křupavý smažený hermelín s hranolkami</div>
+            </div>
           </div>
-        </div>
-        <div class="gcard">
-          <div class="gcard-img"></div>
-          <div class="gcard-body">
-            <div class="gcard-name">Buffalo kuřecí špalíky</div>
-            <div class="gcard-note">Špalíky s buffalo marinádou</div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Kuřecí řízek + americké brambory</div>
+              <div class="mitem-detail">Šťavnatý kuřecí řízek s americkými bramborami</div>
+            </div>
           </div>
         </div>
       </div>
-      <p class="grill-footer">Aktuální ceny a dostupnost zjistíte přímo u nás nebo telefonicky. Nabídka se může lišit dle dne.</p>
-    </div>
-
-    <!-- MINUTKY -->
-    <div class="tab-panel" id="tp-minutky">
-      <div class="mlist">
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Smažený sýr + hranolky</div>
-            <div class="mitem-detail">Zlatavý smažený sýr s domácími hranolkami</div>
+      </div>
+      <div class="menu-col">
+      <div class="tab-panel" id="tp-grill">
+        <h3 class="menu-h">Grilované speciality</h3>
+        <div class="grill-grid">
+          <div class="gcard">
+            <div class="gcard-img"></div>
+            <div class="gcard-body">
+              <div class="gcard-name">Pomalu pečené a zauzené koleno</div>
+              <div class="gcard-note">Šťavnaté koleno uzené na dřevě</div>
+            </div>
+          </div>
+          <div class="gcard">
+            <div class="gcard-img"></div>
+            <div class="gcard-body">
+              <div class="gcard-name">Žebra masitá</div>
+              <div class="gcard-note">Poctivá masitá žebra z grilu</div>
+            </div>
+          </div>
+          <div class="gcard">
+            <div class="gcard-img"></div>
+            <div class="gcard-body">
+              <div class="gcard-name">Kuřata</div>
+              <div class="gcard-note">Celá grilovaná kuřata</div>
+            </div>
+          </div>
+          <div class="gcard">
+            <div class="gcard-img"></div>
+            <div class="gcard-body">
+              <div class="gcard-name">Buffalo křídla</div>
+              <div class="gcard-note">Pikantní křídla v buffalo omáčce</div>
+            </div>
+          </div>
+          <div class="gcard">
+            <div class="gcard-img"></div>
+            <div class="gcard-body">
+              <div class="gcard-name">Buffalo kuřecí špalíky</div>
+              <div class="gcard-note">Špalíky s buffalo marinádou</div>
+            </div>
           </div>
         </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Smažený hermelín + hranolky</div>
-            <div class="mitem-detail">Křupavý smažený hermelín s hranolkami</div>
+        <p class="grill-footer">Aktuální ceny a dostupnost zjistíte přímo u nás nebo telefonicky. Nabídka se může lišit dle dne.</p>
+      </div>
+      <div class="tab-panel" id="tp-prilohy">
+        <h3 class="menu-h">Přílohy</h3>
+        <div class="mlist">
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Hranolky velké</div>
+              <div class="mitem-detail">250&nbsp;g</div>
+            </div>
           </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Kuřecí řízek + americké brambory</div>
-            <div class="mitem-detail">Šťavnatý kuřecí řízek s americkými bramborami</div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Hranolky BBQ Cheese</div>
+              <div class="mitem-detail">250&nbsp;g — s BBQ omáčkou a sýrem</div>
+            </div>
+          </div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Cibulové kroužky</div>
+              <div class="mitem-detail">10&nbsp;ks — křupavé v těstíčku</div>
+            </div>
+          </div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Krokety</div>
+              <div class="mitem-detail">250&nbsp;g</div>
+            </div>
+          </div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Americké brambory</div>
+              <div class="mitem-detail">250&nbsp;g</div>
+            </div>
+          </div>
+          <div class="mitem">
+            <div>
+              <div class="mitem-name">Americké brambory Cheese</div>
+              <div class="mitem-detail">250&nbsp;g — se sýrovou omáčkou</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- PŘÍLOHY -->
-    <div class="tab-panel" id="tp-prilohy">
-      <div class="mlist">
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Hranolky velké</div>
-            <div class="mitem-detail">250&nbsp;g</div>
-          </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Hranolky BBQ Cheese</div>
-            <div class="mitem-detail">250&nbsp;g — s BBQ omáčkou a sýrem</div>
-          </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Cibulové kroužky</div>
-            <div class="mitem-detail">10&nbsp;ks — křupavé v těstíčku</div>
-          </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Krokety</div>
-            <div class="mitem-detail">250&nbsp;g</div>
-          </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Americké brambory</div>
-            <div class="mitem-detail">250&nbsp;g</div>
-          </div>
-        </div>
-        <div class="mitem">
-          <div>
-            <div class="mitem-name">Americké brambory Cheese</div>
-            <div class="mitem-detail">250&nbsp;g — se sýrovou omáčkou</div>
-          </div>
-        </div>
       </div>
+      <div class="tab-note">Nový jídelní a nápojový lístek s cenami doplníme před otevřením. Nabídka se ještě může změnit.</div>
     </div>
-
-    <!-- NÁPOJE -->
-    <div class="tab-panel on" id="tp-napoje">
-      <div class="mlist">
-        <div class="mitem"><div><div class="mitem-name">Zubr 11°</div><div class="mitem-detail">točený</div></div></div>
-        <div class="mitem"><div><div class="mitem-name">Zubr 12°</div><div class="mitem-detail">točený</div></div></div>
-        <div class="mitem"><div><div class="mitem-name">Gustav 13°</div><div class="mitem-detail">točený</div></div></div>
-        <div class="mitem"><div><div class="mitem-name">Litovel</div><div class="mitem-detail">točený</div></div></div>
-      </div>
-    </div>
-
-    <div class="tab-note">Nový jídelní a nápojový lístek s cenami doplníme před otevřením. Nabídka se ještě může změnit.</div>
 
   </div>
 </section>
@@ -245,14 +243,16 @@
 <!-- ══════════════ NA OBJEDNÁNÍ ══════════════ -->
 <section id="objednavky">
   <div class="container">
-    <div class="sec-header">
-      <div class="label">Akce &amp; oslavy</div>
-      <h2 class="title" style="color:#FFFFFF">Jídlo na objednávku</h2>
-      <p class="sec-desc" style="margin-top:14px;color:rgba(255,255,255,.8);max-width:520px;margin-left:auto;margin-right:auto;">
-        Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu. Nerozvážíme, jídlo připravujeme jen na objednané akce a oslavy.
-      </p>
-      <div class="divider" style="margin:14px auto 0;background:var(--gold)"></div>
-    </div>
+    <div class="ord-layout">
+      <div class="ord-side">
+        <div class="sec-header">
+          <div class="label">Akce &amp; oslavy</div>
+          <h2 class="title">Jídlo na objednávku</h2>
+          <p class="sec-desc">
+            Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu. Nerozvážíme, jídlo připravujeme jen na objednané akce a oslavy.
+          </p>
+          <div class="divider"></div>
+        </div>
 
     <div class="ord-grid">
       <div class="ocard">
@@ -272,6 +272,7 @@
         <div class="ocard-detail">Hovězí nízký roštěnec</div>
       </div>
     </div>
+      </div>
 
     <div class="form-box">
       <div class="form-hd">Poptávkový formulář</div>
@@ -279,7 +280,7 @@
 
       <div class="form-off" id="formOff" hidden></div>
       <form id="orderForm">
-        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinů">
+        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinu">
         <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="fg">
@@ -314,9 +315,11 @@
             <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
           </div>
         </div>
+        <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší poptávky. K nám se dostanou e-mailem přes službu FormSubmit.</p>
         <button type="submit" class="btn-send" id="formBtn">Odeslat poptávku →</button>
       </form>
       <div class="form-success" id="formSuccess" role="status"></div>
+    </div>
     </div>
 
   </div>
@@ -331,7 +334,7 @@
         <h2>O hospůdce</h2>
         <div class="divider"></div>
         <p>
-          Vítejte v Hospůdce u Kleinů – místě, kde se setkává poctivé grilované maso,
+          Vítejte v Hospůdce u Kleinu – místě, kde se setkává poctivé grilované maso,
           přátelská atmosféra a skvěle načepovaný Zubr. Interiér je celý nový. Jsme malá hospůdka s velkou duší,
           kde si každý host přijde na své.
         </p>
@@ -367,8 +370,8 @@
           <div>
             <div class="ci-lbl">Adresa</div>
             <div class="ci-val">
-              Hospůdka u Kleinů<br>
-              Dolní 87/79, 700 30 Ostrava-jih
+              Hospůdka u Kleinu<br>
+              Dolní 2354/85, 700 30 Ostrava-Zábřeh
             </div>
           </div>
         </div>
@@ -390,6 +393,13 @@
             </div>
           </div>
         </div>
+        <div class="citem" id="rowFb">
+          <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.500-3.500H14V7.500C14 6.500 14.500 6 15.500 6H18V3h-3c-2.800 0-4.500 1.700-4.500 4.300v2.200H7.500V13h3v8z"/></svg></div>
+          <div>
+            <div class="ci-lbl">Facebook</div>
+            <div class="ci-val"><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Skupina na Facebooku</a></div>
+          </div>
+        </div>
         <div class="citem">
           <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></div>
           <div>
@@ -409,14 +419,46 @@
         </div>
       </div>
 
-      <!-- MAP -->
-      <div class="map-wrap">
-        <iframe
-          src="https://maps.google.com/maps?q=49.8084353,18.2388796&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Hospůdka u Kleinů – mapa">
-        </iframe>
+      <!-- MAPA: pivní tácek, podklad z OpenStreetMap -->
+      <div class="mapa-wrap">
+        <svg class="mapa" viewBox="0 0 800 800" role="img" aria-label="Nakreslená mapa okolí: Hospůdka u Kleinu stojí v ulici Dolní v Ostravě-Zábřehu, poblíž křižovatky s ulicemi Zimmlerova a Hulvácká.">
+          <defs>
+            <clipPath id="mapaKruh"><circle cx="400" cy="400" r="338"/></clipPath>
+            <path id="mapaOkraj" d="M400 42a358 358 0 1 1-.01 0"/>
+            <g id="kopyto"><path d="M-1.300 8C-6.500 8.500-8 2-6.300-3.500-5.300-7-3.300-8.800-2-9-.8-6-.6 3-1.300 8Z"/><path d="M1.300 8C6.500 8.500 8 2 6.300-3.500 5.300-7 3.300-8.800 2-9 .8-6 .6 3 1.300 8Z"/></g>
+            <path id="ul0" d="M520.5 488.7L527.4 492.6L534.3 496.6L541 499.9L547.7 503.2L554.4 506.5L561.1 509.9L567.8 513.2L574.5 516.5L581.2 519.8L587.9 523.1L594.6 526.4L602 529.4L609.4 532.4L616.8 535.4L624.2 538.4L631.6 541.4L639 544.4L646.4 547.4L653.8 550.4L661.2 553.4"/><path id="ul1" d="M195.9 341.5L199.9 336.5L203.9 331.4L207.8 326.4L213.8 321.1L219.7 315.7L225.7 310.4L229.3 307.1L234.1 303.2L239.8 298.6L245.4 294L251 289.4L256.7 284.8L262.3 280.2L268 275.6L273.6 270.9L279.3 266.3L284.9 261.7L290.6 257.1L296.2 252.5L302.2 247.8L308.1 243.1L314.1 238.3L320.1 233.6L326 228.9L332 224.1L337.9 219.4L343.9 214.7L349.9 210L355.8 205.2L361.8 200.5L367.8 195.8L373.7 191L379.7 186.3L385.6 181.6L391.6 176.9L397.6 172.1L403.5 167.4L409.5 162.7L415.5 157.9L421.2 153.8L426.9 149.6L432.6 145.4L438.4 141.2L444.1 137L449.8 132.8L456 128L462.1 123.1L468.2 118.3L474.4 113.4L480.5 108.6"/>
+          </defs>
+          <circle cx="400" cy="400" r="396" fill="#1A1E3C"/>
+          <circle cx="400" cy="400" r="342" fill="#C59838"/>
+          <text class="m-rim"><textPath href="#mapaOkraj" textLength="2225" lengthAdjust="spacing">HOSPŮDKA U KLEINU  ·  ZUBR NA ČEPU  ·  DOLNÍ 2354/85  ·  OSTRAVA-ZÁBŘEH  ·  </textPath></text>
+          <g clip-path="url(#mapaKruh)">
+            <rect width="800" height="800" fill="#F7F1E6"/>
+            <g fill="#DDE2BC"><path d="M672.2 -259.2L652.9 -147L635.7 -59.1L626.9 -31.1L635.9 1.9L623.1 11.5L633.8 32.5L639.7 40.5L712.8 138.8L745.7 255.3L740.7 261.8L839.4 333.8L860.7 318.6L865.3 344L876.2 382.3L885.4 371.5L869.9 262.7L851 164.3L817.6 53.3L792.7 -18.6L764.2 -87.9L724.3 -173L672.2 -259.2Z"/><path d="M367.7 731.2L410 677L406.6 672.3L349.4 620.7L353.9 615.7L310.5 581.8L297.8 584.7L217.9 557.4L207.4 577.9L219.2 593.5L226.5 589.7L269.1 652L261.8 656.7L307.3 706.3L342 726.7L367.7 731.2Z"/></g>
+            <g fill="#EADFC6"><path d="M261.5 733.3L276.5 720.2L270 713L272.7 710.6L265.9 702.9L263.4 705.1L250.7 690.7L235.5 703.9L252 722.6L261.5 733.3Z"/><path d="M52.1 399.1L59.9 384.9L62.2 386.2L65 381.1L62.7 379.8L70.5 365.9L52.7 356.2L34.3 389.3L52.1 399.1Z"/><path d="M306.5 466.5L317.9 472.8L318.4 471.8L323.2 474.4L322.5 475.7L333.8 481.8L325.5 496.8L298 481.6L306.5 466.5Z"/><path d="M472.8 724.7L476.8 720L476.4 719.6L476.4 719.5L481.8 713.2L482.2 713.6L486.4 708.9L512 730.7L512.4 734L529 748.3L518.4 760.6L514.3 757.1L513.2 758L512.1 758.7L509.1 759.6L507.7 759.5L506.4 759.2L504.9 758.5L502.6 756.9L494.8 750.1L498.1 746.4L490 739.4L484.4 745.9L471.2 734.2L471.3 733.5L471.6 733L476 727.5L472.8 724.7Z"/><path d="M138.5 505.2L148.7 510.9L149.9 508.8L155.7 512L154.4 514.3L165.8 520.5L156 538L122.8 519.5L132.8 502L138.5 505.2Z"/><path d="M333.8 481.8L345.4 488.2L345.9 487.4L350.4 489.9L349.9 490.7L361.4 497L353 512L325.5 496.8L333.8 481.8Z"/><path d="M90.6 374L112.3 355.7L114.8 358.5L118.9 355L129.2 366.9L125.1 370.5L126.4 372.1L104.6 390.5L90.6 374Z"/><path d="M165.8 520.5L179.8 528.3L181 526.1L186.1 528.9L184.8 531.2L198.8 539L189.1 556.3L156 538L165.8 520.5Z"/><path d="M525.1 682.8L514.1 677.4L513.4 678.7L511.1 677.6L511.8 676.2L510 675.4L518 659.5L533.1 667L525.1 682.8Z"/><path d="M412.9 453.1L451.2 474.8L438.4 497.1L400 475.4L412.9 453.1Z"/><path d="M231.9 412.5L218.3 398L247.8 370.6L259.3 382.9L262.9 386.6L258.9 390.3L256.3 392.7L254.9 391.2L231.9 412.5Z"/><path d="M501.4 686.7L493.5 702.4L487.1 697.9L495 682.8L501.4 686.7Z"/><path d="M270.7 466.2L279.2 451.1L290.8 457.7L291.2 456.9L295.7 459.5L295.3 460.1L306.5 466.5L298 481.6L270.7 466.2Z"/><path d="M451.9 667.4L463.3 653.3L464.6 654.3L466.5 651.9L469.8 654.5L470.6 653.5L481.8 662.4L478.8 666.2L482.5 669.2L486.5 664.2L492.1 668.7L485.3 677L480.1 672.9L471.7 683.2L451.9 667.4Z"/><path d="M361.6 452.4L374 430.9L412.9 453.1L400 475.4L361.1 453.2L361.6 452.4Z"/><path d="M180.6 447.5L163 429.1L195.5 398.6L213.1 417.1L180.6 447.5Z"/><path d="M156.7 471.7L139.2 462.3L121 495.6L132.8 502L138.5 505.2L146.1 491.3L148.3 492.5L151.3 487L149.1 485.8L156.7 471.7Z"/><path d="M287.2 543.3L291.5 535.7L284.6 531.9L278.3 543.2L260.8 533.5L256.7 540.8L250.9 536.9L250.7 537.4L240.1 530.9L259.8 495.8L290.9 513.1L295.3 505.4L305.2 510.9L296.9 525.7L355.4 558.4L345.7 575.6L287.2 543.3Z"/><path d="M452.5 541.2L443.8 555.9L454.9 562.4L457.8 557.6L462.6 560.3L457.5 568.9L455.6 567.8L452.1 573.7L454 574.7L452.2 577.9L471 588.9L491.3 554.5L472 543.3L465 555.2L460.3 552.4L463.2 547.5L452.5 541.2Z"/><path d="M487.3 494.8L494.9 499.3L495.5 498.3L503.2 502.8L502.7 503.7L510.3 508.1L501.9 522.3L489.8 515.3L488.3 517.9L477.4 511.5L487.3 494.8Z"/><path d="M546 694.8L554 678.4L571.2 686.6L563.3 703L546 694.8Z"/><path d="M167.9 458L156.2 452.2L151.5 461.7L163.2 467.4L167.9 458Z"/><path d="M362.5 502.8L367.6 505.7L361.6 516.3L356.4 513.5L362.5 502.8Z"/><path d="M408.5 532.9L402.6 529.6L407.9 520.3L413.7 523.7L408.5 532.9Z"/><path d="M257.6 446.9L251.6 443.6L257.1 434L263 437.3L257.6 446.9Z"/><path d="M118.9 355L126.4 348.6L124.7 346.8L132.2 340.4L128.5 336.2L133.8 331.6L134.5 332.5L143.5 324.7L146.6 328.3L147.9 327.2L155 335.3L154.4 335.8L157.7 339.6L158.5 338.9L162.3 343.3L158 347L157.2 346L138.2 362.4L136.6 360.6L129.2 366.9L118.9 355Z"/><path d="M415.2 627.9L417.2 629.6L421.3 624.8L422.2 625.7L431.7 615.1L423.3 607.8L421 610.4L417.5 607.4L419.7 604.8L398.5 586.6L374.4 614.7L362.8 605L396.9 565.7L454.8 615.7L421.9 654.4L416.2 649.6L414 652.1L404.2 643.8L415 632.1L413.1 630.5L415.2 627.9Z"/><path d="M649.3 594.3L652.6 585.6L651 584.9L652.4 581.4L655.8 580L656.7 577.3L666 580.9L666.4 579.8L675.5 583.8L671.8 592.9L678.1 595.5L672.3 610.5L664.7 607.6L667.1 601.4L660.7 598.8L660.3 599.9L654.6 597.5L655.1 596.5L649.3 594.3Z"/><path d="M605.1 657.5L611.9 642.9L610.1 642.1L612.4 637.3L595.6 629.5L591.6 638L593.6 639L588.5 649.9L605.1 657.5Z"/><path d="M551.2 631.3L558.7 616.3L541.8 608L539 613.7L541 614.7L536.4 624.1L551.2 631.3Z"/><path d="M605.4 557.6L606.3 555.3L615.6 559L615.3 559.6L623 562.6L615.9 580.4L604.9 576.1L603.6 579.3L598.3 577.3L598.8 575.8L595.6 574.6L602.7 556.5L605.4 557.6Z"/><path d="M529.6 584.5L533.7 586.9L524.3 602.8L504.1 591L513.7 574.9L529.7 584.2L529.6 584.5Z"/><path d="M591 584.5L585.2 597.2L560.3 586L566 573.3L591 584.5Z"/><path d="M532.5 543.6L553.3 555.4L558.3 546.8L562.5 549.2L561.5 550.9L568 554.6L574 544.2L545.5 528L543.6 531.3L540.6 529.5L532.5 543.6Z"/><path d="M688.6 540L705.7 546.4L714.5 523.4L716.6 517.7L702 512.2L697.5 524L695.1 523.1L688.6 540Z"/><path d="M686.5 494.2L691.6 501.1L697.8 496.6L699.3 498.5L705.7 493.8L704.1 491.6L710.3 487.1L699.9 473L685.4 483.6L690.9 491L686.5 494.2Z"/><path d="M671.9 533.4L663.4 530.2L661.6 530.9L658.1 529.6L657.2 527.8L648.8 524.5L652.5 515.2L649.9 514.3L652.9 507.7L655.2 508.6L656.9 504.9L662.6 507.2L661.7 509.5L667.4 511.8L673.2 514.1L677.1 504.9L688.4 509.3L685.6 516.6L679.5 514.2L671.9 533.4Z"/><path d="M728.1 486.6L712.6 465.9L729.8 453.3L728.7 451.8L736.3 446.2L754.7 470.8L742.2 479.9L739 475.7L729.7 482.5L731.1 484.4L728.1 486.6Z"/><path d="M706.7 415.7L701.5 419.5L700.5 418.2L689.9 426L690.3 426.5L688.4 427.9L683.3 421L685.2 419.6L681 413.9L686.3 410L687.7 411.8L698.1 404.2L706.7 415.7Z"/><path d="M663 448.2L675.2 439.1L663.4 423.5L661.2 425.1L660.5 424.1L654.9 428.3L657.2 431.4L652.7 434.7L663 448.2Z"/><path d="M706.7 415.7L698.1 404.2L708.6 396.3L707.2 394.5L712.6 390.5L717.2 396.8L719.2 395.3L723.9 401.7L721.9 403.1L721.6 402.7L710.8 410.6L711.8 411.9L707 415.5L706.7 415.7Z"/><path d="M640.3 464.6L625.5 475.5L612 457.4L616.4 454.1L613.8 450.5L619.6 446.2L620.7 447.7L624.2 445.1L625.9 447.4L626.8 446.7L631 452.3L633.5 450.5L638.5 457.1L636 458.9L640.3 464.6Z"/><path d="M598.8 485.5L590.1 501L574.2 492.2L583 476.3L598.8 485.5Z"/><path d="M540.1 132.3L532 138.3L531 137L517.6 147.4L518.5 148.5L510.7 154.6L496.7 136.7L525.9 113.9L540.1 132.3Z"/><path d="M470.2 263.7L502.6 263.5L513 244.7L543 260.6L536.7 271.4L532.4 270L528.2 277.5L544.5 305.6L576.9 286.3L588.9 306.4L514.8 350.1L502.6 330.2L535.9 310.9L518.3 281.4L513.5 283.8L505.3 279.3L505.3 274.1L470.4 274.1L470.9 312.3L447.7 312.5L446.6 226.8L470.2 226.4L470.2 263.7Z"/><path d="M584.6 69.4L598.7 87.6L590.7 93.7L589.6 92.3L576 102.7L577.1 104.1L569.3 110L555.2 91.8L584.6 69.4Z"/><path d="M671.7 184.9L681.5 220.6L659.3 226.6L656.5 216.8L658.2 216.4L653.7 200.1L652.2 200.5L649.6 190.9L671.7 184.9Z"/><path d="M671.7 184.9L649.6 190.9L646.8 181.5L648.5 181.1L644.1 165L642.3 165.5L639.5 155.5L661.9 149.5L671.7 184.9Z"/><path d="M681.5 220.6L691.3 256L669.1 262.1L666.4 252.2L668 251.8L663.6 235.7L661.9 236.2L659.3 226.6L681.5 220.6Z"/><path d="M702 257.6L709 280.8L670.8 291.3L664.3 268.1L702 257.6Z"/><path d="M555.2 91.8L569.3 110L561.4 116L560.4 114.8L546.9 125.1L547.9 126.3L540.1 132.3L525.9 113.9L555.2 91.8Z"/><path d="M341 188.9L305.6 216.8L289.6 196.8L325 168.9L341 188.9Z"/><path d="M157.2 202L162.7 208.2L146.2 222.8L140.7 216.6L157.2 202Z"/><path d="M465.8 358.3L453.1 380.7L414.3 358.8L423.4 344L427.2 336.8L465.8 358.3Z"/><path d="M113.8 230.9L108.1 236L99.1 226L104.9 220.9L113.8 230.9Z"/><path d="M169.3 191.5L181.2 204.7L169 215.4L162.7 208.2L157.2 202L169.3 191.5Z"/><path d="M411.6 372.5L398.9 394.6L360.2 372.7L372.9 350.5L411.6 372.5Z"/><path d="M87.1 256.4L88.2 253.4L97.4 256.7L96.2 260.3L105.1 263.4L98.6 281.4L73 272.4L79.7 253.8L87.1 256.4Z"/><path d="M504.8 380.3L501 387.4L492.1 402.4L453.1 380.7L465.8 358.3L504.8 380.3Z"/><path d="M406.6 113.6L417.2 126.6L403.2 137.9L395.7 128.6L393.4 130.5L386.6 122.1L394.2 116.1L397.9 120.6L406.6 113.6Z"/><path d="M308.4 148L273.1 175.9L257.1 155.9L292.4 128.1L308.4 148Z"/><path d="M361.1 63L373.8 76.4L358.5 90.8L345.7 77.4L361.1 63Z"/><path d="M368.2 130L360.8 136.6L350.4 125.1L357.8 118.5L368.2 130Z"/><path d="M292.4 84.6L286.3 89.8L282.9 85.8L284.3 84.6L289 80.6L291.3 83.3L292.4 84.6Z"/><path d="M398.8 272L393.6 278.3L381.7 268.6L386.9 262.3L398.8 272Z"/><path d="M237.7 140.2L232.6 144.6L224.9 135.9L229.8 131.6L237.7 140.2Z"/><path d="M356.4 58.1L348.2 65.6L346.2 67.4L339.3 60L349.5 50.7L356.4 58.1Z"/><path d="M370.7 143.8L372.4 142.5L382.8 156.1L368.5 167L358.2 153.7L359.5 152.7L357.9 150.7L361.9 147.7L360.4 145.9L364.4 142.8L365.6 144.4L369.2 141.7L370.7 143.8Z"/><path d="M439.6 198.2L439.2 198.9L448.6 204.1L437 225L430.9 221.8L427.4 225.9L422.5 228.5L417 229L411.8 227.4L407.5 223.9L392.3 236.3L392.8 236.9L385.4 242.9L384.9 242.3L376.4 249.2L370.9 244.6L368.3 246.7L357.5 233.6L362.4 229.7L361.8 229.1L369.2 223.1L369.7 223.6L378.8 216.3L378.4 215.6L385.7 209.6L386.2 210.2L395.3 202.8L394.8 202.2L402.2 196.3L402.7 196.8L415.9 186.1L430.8 194.3L431.2 193.6L439.6 198.2Z"/><path d="M242.4 136L237.7 140.2L229.8 131.6L234.4 127.4L242.4 136Z"/><path d="M239.3 199.5L269 236.1L247.3 253.4L247.2 253.3L226.4 270L226.3 269.9L206.1 286L205.7 285.5L190.9 297.4L161.5 261L177.4 248.3L182 254L184.4 252.1L187 255.2L184.3 257.4L187.3 261.1L193.4 256.2L200 264.3L209.9 256.4L179.7 219.1L194 207.7L224.4 245.2L234.1 237.5L227.4 229.2L233.4 224.5L227.8 217.5L225 219.7L222.5 216.6L225.4 214.2L223.6 212L239.3 199.5Z"/><path d="M559.6 455.1L546.8 477.1L508 455.5L520.7 433.3L559.6 455.1Z"/><path d="M520.7 433.3L508 455.5L469.2 433.7L481.8 411.5L520.7 433.3Z"/><path d="M161.5 245.9L166.8 252.3L159.6 258.2L154.3 251.7L161.5 245.9Z"/><path d="M367 259.2L369.9 256.7L376.7 264.4L360 278.9L348.3 265.6L362.1 253.6L367 259.2Z"/><path d="M491.2 67.9L482.3 74.7L480.6 77.7L479 79.3L476.2 79.7L460.2 92.1L458.3 96.2L453.8 97.2L445.5 103.5L433.9 88.7L479.2 52.9L491.2 67.9Z"/><path d="M285.5 67L296.2 78.9L291.3 83.3L289 80.6L280.6 71.3L285.5 67Z"/><path d="M431.4 60.8L418.7 72.3L390.7 41.7L403.4 30.2L431.4 60.8Z"/><path d="M239.2 123.1L247.1 131.7L242.4 136L234.4 127.4L239.2 123.1Z"/><path d="M322.1 267.4L338.2 287.5L301 316.8L284.9 296.7L322.1 267.4Z"/><path d="M709.8 326L711.2 324.1L716.2 327.7L705.9 341.8L695.8 334.6L704.7 322.3L709.8 326Z"/><path d="M372.9 350.5L360.2 372.7L321.2 350.5L334 328.3L372.9 350.5Z"/><path d="M289 80.6L284.3 84.6L276.1 75.4L280.6 71.3L289 80.6Z"/><path d="M387.3 309.5L381.3 320.4L376.6 317.5L382.7 306.8L387.3 309.5Z"/><path d="M410.6 322.4L404.5 333.2L399.7 330.6L405.8 320L410.6 322.4Z"/><path d="M391.9 312.1L396.7 314.7L390.5 325.4L385.8 322.7L391.9 312.1Z"/><path d="M530.4 389.8L524.4 400.4L519.6 397.9L525.8 387L530.4 389.8Z"/><path d="M553.6 402.6L547.6 413.2L543 410.7L549 399.9L553.6 402.6Z"/><path d="M533.7 373.1L527.9 383.2L522.2 380.1L527.9 369.7L533.7 373.1Z"/><path d="M556.7 386L550.9 396.4L546.3 393.7L552.1 383.6L556.7 386Z"/><path d="M538.3 375.7L542.9 378.4L537 388.5L532.3 385.8L538.3 375.7Z"/><path d="M561.5 388.6L566 391.3L560.2 401.6L555.4 399L561.5 388.6Z"/><path d="M552.1 383.6L546.3 393.7L541.7 391.2L547.6 380.7L552.1 383.6Z"/><path d="M405.8 320L399.7 330.6L395.2 328.2L401.3 317.4L405.8 320Z"/><path d="M539.7 394.9L533.6 405.5L529 403.1L535.2 392.1L539.7 394.9Z"/><path d="M576.2 397.1L570 407.3L565.4 404.7L571.3 394.3L576.2 397.1Z"/><path d="M373.1 301.1L366.8 312.3L360.3 308.5L366.4 297.6L373.1 301.1Z"/><path d="M415.3 325.3L409.1 336.1L404.5 333.2L410.6 322.4L415.3 325.3Z"/><path d="M530.4 389.8L535.2 392.1L529 403.1L524.4 400.4L530.4 389.8Z"/><path d="M420.2 328.2L414.1 338.8L409.1 336.1L415.3 325.3L420.2 328.2Z"/><path d="M382.7 306.8L376.6 317.5L371.9 314.8L378.1 304L382.7 306.8Z"/><path d="M521.2 384.5L525.8 387L519.6 397.9L515 395.3L521.2 384.5Z"/><path d="M387.3 309.5L391.9 312.1L385.8 322.7L381.3 320.4L387.3 309.5Z"/><path d="M556.7 386L561.5 388.6L555.4 399L550.9 396.4L556.7 386Z"/><path d="M549 399.9L543 410.7L538.3 408.2L544.4 397.3L549 399.9Z"/><path d="M576.2 397.1L580.7 400L575 410L570 407.3L576.2 397.1Z"/><path d="M571.3 394.3L565.4 404.7L560.2 401.6L566 391.3L571.3 394.3Z"/><path d="M366.4 297.6L360.3 308.5L353.5 304.6L359.7 293.8L366.4 297.6Z"/><path d="M558.4 405.1L552.3 415.8L547.6 413.2L553.6 402.6L558.4 405.1Z"/><path d="M538.3 375.7L532.3 385.8L527.9 383.2L533.7 373.1L538.3 375.7Z"/><path d="M521.2 384.5L515 395.3L510 392.3L516 381.7L521.2 384.5Z"/><path d="M539.7 394.9L544.4 397.3L538.3 408.2L533.6 405.5L539.7 394.9Z"/><path d="M373.1 301.1L378.1 304L371.9 314.8L366.8 312.3L373.1 301.1Z"/><path d="M547.6 380.7L541.7 391.2L537 388.5L542.9 378.4L547.6 380.7Z"/><path d="M396.7 314.7L401.3 317.4L395.2 328.2L390.5 325.4L396.7 314.7Z"/><path d="M563.6 408.1L562.3 410L557.4 418.7L552.3 415.8L558.4 405.1L563.6 408.1Z"/><path d="M570.4 414.6L570.4 417.7L567.8 418.7L565.4 423L557.4 418.7L562.3 410L570.4 414.6Z"/><path d="M427.3 334.1L426.1 336.3L427.2 336.8L423.4 344L415.7 339.8L421 330.4L427.3 334.1Z"/><path d="M507.7 379.2L513.9 382.7L508.6 391.9L501 387.4L504.8 380.3L506.7 381.1L507.7 379.2Z"/><path d="M388.1 546L383.1 543.2L388.8 533L393.8 535.7L388.1 546Z"/><path d="M383.1 543.2L378.4 540.6L384.1 530.3L388.8 533L383.1 543.2Z"/><path d="M378.4 540.6L373.8 538L379.5 527.8L384.1 530.3L378.4 540.6Z"/><path d="M373.8 538L369.2 535.4L374.9 525.2L379.5 527.8L373.8 538Z"/><path d="M369.2 535.4L364.5 532.8L370.2 522.6L374.9 525.2L369.2 535.4Z"/><path d="M364.5 532.8L359.9 530.3L365.6 520L370.2 522.6L364.5 532.8Z"/><path d="M359.9 530.3L355.2 527.7L361 517.5L365.6 520L359.9 530.3Z"/><path d="M355.2 527.7L350.1 524.8L355.8 514.6L361 517.5L355.2 527.7Z"/><path d="M395.4 521.2L400.5 523.9L394.5 534.6L389.4 531.8L395.4 521.2Z"/><path d="M390.7 518.5L395.4 521.2L389.4 531.8L384.7 529.2L390.7 518.5Z"/><path d="M386.1 516L390.7 518.5L384.7 529.2L380.1 526.6L386.1 516Z"/><path d="M375.6 524.1L381.6 513.4L386.1 516L380.1 526.6L375.6 524.1Z"/><path d="M376.8 510.8L381.6 513.4L375.6 524.1L370.8 521.5L376.8 510.8Z"/><path d="M366.2 518.9L372.2 508.2L376.8 510.8L370.8 521.5L366.2 518.9Z"/><path d="M367.6 505.7L372.2 508.2L366.2 518.9L361.6 516.3L367.6 505.7Z"/><path d="M414.4 536.2L408.5 532.9L413.7 523.7L419.6 527L414.4 536.2Z"/><path d="M240.1 424.5L246.1 427.8L240.6 437.4L234.7 434.1L240.1 424.5Z"/><path d="M246.1 427.8L251.7 430.9L246.2 440.5L240.6 437.4L246.1 427.8Z"/><path d="M251.7 430.9L257.1 434L251.6 443.6L246.2 440.5L251.7 430.9Z"/></g>
+            <g fill="none" stroke="#1A1E3C" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke-width="6" d="M654.8 329.6L672.6 342.4L760.3 404.3M569.1 245.2L538.9 228L415.5 157.9M449.2 389.2L427.8 425.4L423.5 432.9M334.5 454.6L360.9 409.8L365.6 401.8M-52.5 467.2L-23.8 476.1L0.4 483.7L17.5 485.5L34.5 474.7L70 415.1L80.8 409.5L91.2 411.8L98 418.3L104.8 425.1M423.6 673.4L418.1 669.6L412.1 665.5L387.6 642.7L356 613.2L351.9 609.3L348.9 594.7L383 552.7M347.7 533L371.3 546.4L383 552.7L394.5 555L406.2 562.5L461 610.6L465.9 614.9M257.4 411.5L274.6 421.6L334.5 454.6L410.1 496.9M346.7 314L408.7 345.7L409.2 360.9L449.2 389.2L496.6 411L509.6 405L548.5 424.7M185.1 499.5L192.2 503.2L227 521.5M96.8 803.2L88.7 791.8L77.4 775.9L87.1 760.5L100.3 749.8L141.1 652.3M690 137.1L717.7 232.1"/>
+              <path stroke-width="13" d="M53 550L59.7 516.2L83.3 450.4L104.8 425.1L110.2 418.8L173.7 363.2L195.9 341.5M2.2 253.2L7.5 248.5L133.2 136.3L138.5 131.6L312.4 -22.8L317.6 -27.5L383.9 -87.9L401.6 -122L411.4 -179.4L411.6 -186.2L412.1 -205L411.5 -214L395.1 -467.9L395.2 -481.5M188.9 -156.2L242.3 -94.9L246.7 -90L306.2 -29L312.4 -22.8L317.1 -17.4L443.2 125.3L449.8 132.8M876.1 809.7L828.3 786.2L770.3 754.9L472.3 606.1M-71 -93.6L12.6 -2.4L65.4 60.8L69.7 66L128.2 130.8L133.2 136.3M846.1 628.3L594.6 526.4L534.3 496.6L423.5 432.9L365.6 401.8L292.1 362.7L260 349.7L212.9 348L195.9 341.5M195.9 341.5L207.8 326.4L225.7 310.4L229.3 307.1L234.1 303.2L296.2 252.5L415.5 157.9L449.8 132.8L596.9 16.5L604.6 4.5L610.2 -5.9L614.3 -13.7L623.6 -38.7L642.7 -150.8L644.3 -160.2M382.7 749L386.2 725.2L414.4 686.2L423.6 673.4L430.5 664L448.9 638.5L465.9 614.9L472.3 606.1L534.3 496.6M189 643.9L227.6 620.3M849.3 339.2L760.3 404.3L603.6 519.8L594.6 526.4M227.6 620.3L210.5 594.2L196.5 574.2L209.9 551.2L227 521.5L248 485.2M238.6 182L291.1 246.3L296.2 252.5M193.6 199.5L203.2 205L216.5 204.5L229.4 194.9L238.6 182L239.3 172.2L234.8 162.6L217.2 143.4M509 768.5L484.3 761.1L468.3 755.2L463.2 754.7L447.9 753.1L382.7 749L335.9 732.8L307.2 716.8L291.1 703L276.7 685.1L258.2 661.6L227.6 620.3M434.3 841.7L417.5 833.1L408.4 813.1L385.8 763L382.7 749M53 550L105.5 570.6L139.1 590L168.9 618.4L189 643.9L204.9 675.6L216.3 708L220.9 759.2L220.2 786.8L223 907.7M2.2 253.2L171.2 320.1L195.9 341.5"/>
+              <path stroke-width="18" d=""/>
+            </g>
+            <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke-width="3.500" d="M654.8 329.6L672.6 342.4L760.3 404.3M569.1 245.2L538.9 228L415.5 157.9M449.2 389.2L427.8 425.4L423.5 432.9M334.5 454.6L360.9 409.8L365.6 401.8M-52.5 467.2L-23.8 476.1L0.4 483.7L17.5 485.5L34.5 474.7L70 415.1L80.8 409.5L91.2 411.8L98 418.3L104.8 425.1M423.6 673.4L418.1 669.6L412.1 665.5L387.6 642.7L356 613.2L351.9 609.3L348.9 594.7L383 552.7M347.7 533L371.3 546.4L383 552.7L394.5 555L406.2 562.5L461 610.6L465.9 614.9M257.4 411.5L274.6 421.6L334.5 454.6L410.1 496.9M346.7 314L408.7 345.7L409.2 360.9L449.2 389.2L496.6 411L509.6 405L548.5 424.7M185.1 499.5L192.2 503.2L227 521.5M96.8 803.2L88.7 791.8L77.4 775.9L87.1 760.5L100.3 749.8L141.1 652.3M690 137.1L717.7 232.1"/>
+              <path stroke-width="10" d="M53 550L59.7 516.2L83.3 450.4L104.8 425.1L110.2 418.8L173.7 363.2L195.9 341.5M2.2 253.2L7.5 248.5L133.2 136.3L138.5 131.6L312.4 -22.8L317.6 -27.5L383.9 -87.9L401.6 -122L411.4 -179.4L411.6 -186.2L412.1 -205L411.5 -214L395.1 -467.9L395.2 -481.5M188.9 -156.2L242.3 -94.9L246.7 -90L306.2 -29L312.4 -22.8L317.1 -17.4L443.2 125.3L449.8 132.8M876.1 809.7L828.3 786.2L770.3 754.9L472.3 606.1M-71 -93.6L12.6 -2.4L65.4 60.8L69.7 66L128.2 130.8L133.2 136.3M846.1 628.3L594.6 526.4L534.3 496.6L423.5 432.9L365.6 401.8L292.1 362.7L260 349.7L212.9 348L195.9 341.5M195.9 341.5L207.8 326.4L225.7 310.4L229.3 307.1L234.1 303.2L296.2 252.5L415.5 157.9L449.8 132.8L596.9 16.5L604.6 4.5L610.2 -5.9L614.3 -13.7L623.6 -38.7L642.7 -150.8L644.3 -160.2M382.7 749L386.2 725.2L414.4 686.2L423.6 673.4L430.5 664L448.9 638.5L465.9 614.9L472.3 606.1L534.3 496.6M189 643.9L227.6 620.3M849.3 339.2L760.3 404.3L603.6 519.8L594.6 526.4M227.6 620.3L210.5 594.2L196.5 574.2L209.9 551.2L227 521.5L248 485.2M238.6 182L291.1 246.3L296.2 252.5M193.6 199.5L203.2 205L216.5 204.5L229.4 194.9L238.6 182L239.3 172.2L234.8 162.6L217.2 143.4M509 768.5L484.3 761.1L468.3 755.2L463.2 754.7L447.9 753.1L382.7 749L335.9 732.8L307.2 716.8L291.1 703L276.7 685.1L258.2 661.6L227.6 620.3M434.3 841.7L417.5 833.1L408.4 813.1L385.8 763L382.7 749M53 550L105.5 570.6L139.1 590L168.9 618.4L189 643.9L204.9 675.6L216.3 708L220.9 759.2L220.2 786.8L223 907.7M2.2 253.2L171.2 320.1L195.9 341.5"/>
+              <path stroke-width="15" d=""/>
+            </g>
+            <path fill="#EADFC6" d="M282 409.1L321.2 431L334.2 408.4L294.7 386.8Z"/><path fill="#A4551F" d="M294.7 386.8L291.5 392.3L265.9 377.5L259.3 382.9L262.9 386.6L258.9 390.3L277.8 401L276.8 403.5L281 405.7L279.8 407.7Z"/>
+            <text class="m-name m-park" x="623.1" y="382.3" font-size="24" text-anchor="middle">Sad Družby</text>
+            <text class="m-name" font-size="28" dy="9.520000000000001"><textPath href="#ul0" startOffset="50%" text-anchor="middle">Dolní</textPath></text><text class="m-name" font-size="26" dy="8.84"><textPath href="#ul1" startOffset="76%" text-anchor="middle">Hulvácká</textPath></text>
+            <g fill="#A4551F"><use href="#kopyto" transform="translate(404.8 414.9) rotate(-61.7)"/><use href="#kopyto" transform="translate(376.2 415.4) rotate(-61.7)"/><use href="#kopyto" transform="translate(357.9 393.1) rotate(-78.8)"/><use href="#kopyto" transform="translate(330.7 401.9) rotate(-78.8)"/><use href="#kopyto" transform="translate(308.9 383.3) rotate(-78.8)"/><use href="#kopyto" transform="translate(281.6 392.2) rotate(-78.8)"/></g>
+          </g>
+          <image href="assets/stit.svg" x="216.5" y="260.9" width="118" height="129.3"/>
+          <image href="assets/zubr-logo.svg" x="236.6" y="281.6" width="77.9" height="70.5"/>
+          <text class="m-name m-here" x="342.5" y="302.9" font-size="27">Tady čepujeme</text>
+        </svg>
+        <div class="mapa-btns">
+          <a class="btn btn-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.8083669,18.2391261" target="_blank" rel="noopener">Trasa v Google Mapách</a>
+          <a class="btn btn-map" href="https://mapy.com/fnc/v1/route?end=18.2391261,49.8083669&amp;routeType=car_fast" target="_blank" rel="noopener">Trasa na Mapy.com</a>
+        </div>
+        <p class="mapa-osm">Podklad mapy © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">přispěvatelé OpenStreetMap</a></p>
       </div>
     </div>
   </div>
@@ -427,7 +469,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
+        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinu</span></div>
         <p class="footer-text">
           Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
           Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
@@ -441,6 +483,7 @@
           <li><a href="#objednavky">Na objednávku</a></li>
           <li><a href="#o-nas">O nás</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -452,7 +495,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Hospůdka u Kleinů. Všechna práva vyhrazena.</span>
+      <span>© 2026 Hospůdka u Kleinu. Všechna práva vyhrazena.</span>
       <span>Vytvořil Adam Biely</span>
     </div>
   </div>
