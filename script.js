@@ -181,11 +181,11 @@
    // shield and pub name
    const sW = 210, sH = sW * 456 / 416, sX = (W - sW) / 2, sY = 92;
    x.drawImage(stit, sX, sY, sW, sH);
-   const lW = sW * 0.66;
-   x.drawImage(zubr, sX + sW * 0.17, sY + sH * 0.16, lW, lW * 353.6 / 390.5);
+   const lW = sW * 0.68;
+   x.drawImage(zubr, sX + sW * 0.16, sY + sH * 0.12, lW, lW * 353.6 / 390.5);
    let y = sY + sH + 74;
    x.fillStyle = '#FFFFFF'; x.font = BREE.replace('{}', 54);
-   x.fillText('Hospůdka u Kleinu', W / 2, y);
+   x.fillText('Hospůdka u Kleinů', W / 2, y);
 
    // measure first, so the middle of the poster sits evenly whatever the text length
    const dole = H - 124;

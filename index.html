@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hospůdka u Kleinu – Ostrava-Zábřeh</title>
-  <meta name="description" content="Hospůdka u Kleinu v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
+  <title>Hospůdka u Kleinů – Ostrava-Zábřeh</title>
+  <meta name="description" content="Hospůdka u Kleinů v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
   <link rel="icon" href="assets/stit.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@500;700&family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
 </head>
 
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="krida"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" result="sum"/><feDisplacementMap in="SourceGraphic" in2="sum" scale="1.6"/></filter></svg>
 <!-- ══════════════ PROUŽEK S NOVINKOU ══════════════ -->
 <a href="#akce" class="strip" id="strip">Velké znovuotevření · pátek 20. listopadu</a>
 
@@ -22,7 +23,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <span class="logo-shield"><img src="assets/stit.svg" alt="" class="ls-bg"><img src="assets/zubr-logo.svg" alt="Zubr" class="ls-logo"></span>
-      <span>Hospůdka u&nbsp;<em>Kleinu</em></span>
+      <span>Hospůdka u&nbsp;<em>Kleinů</em></span>
     </a>
     <ul class="nav-links">
       <li><a href="#akce">Akce</a></li>
@@ -60,15 +61,18 @@
     </div>
 
     <aside class="hero-tap">
-      <h2 class="tap-h">Na čepu</h2>
-      <ul class="tap-list">
-        <li>Zubr 11°</li>
-        <li>Zubr 12°</li>
-        <li>Gustav 13°</li>
-        <li>Litovel</li>
-      </ul>
-      <p class="tap-facts">Denně 15:00 – 22:00<span class="od-otevreni"></span><br>
-        Dolní 2354/85, 700 30 Ostrava-Zábřeh<br><a href="https://www.google.com/maps/dir/?api=1&destination=49.8083669,18.2391261">Naplánovat cestu</a></p>
+      <div class="tabule">
+        <h2 class="tabule-h">Dnes čepujeme</h2>
+        <ul class="tabule-list">
+          <li><span class="t-name">Zubr Grál</span><span class="t-deg">10°</span></li>
+          <li><span class="t-name">Zubr Grand</span><span class="t-deg">11°</span></li>
+          <li><span class="t-name">Zubr Gradus</span><span class="t-deg">12°</span></li>
+          <li><span class="t-name">Zubr Gradus <small>Nefiltrovaný</small></span><span class="t-deg">12°</span></li>
+          <li><span class="t-name">Litovel Gustav <small>Nefiltrovaný</small></span><span class="t-deg">13°</span></li>
+          <li><span class="t-name">Litovel Černý <small>Premium Dark</small></span><span class="t-deg">12°</span></li>
+        </ul>
+        <p class="tabule-cas">Otevřeno denně 15–22</p>
+      </div>
     </aside>
   </div>
 </section>
@@ -108,10 +112,12 @@
       <div class="tab-panel on" id="tp-napoje">
         <h3 class="menu-h">Nápoje</h3>
         <div class="mlist">
-          <div class="mitem"><div><div class="mitem-name">Zubr 11°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Zubr 12°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Gustav 13°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Litovel</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Zubr Grál 10°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Zubr Grand 11°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Zubr Gradus 12°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Zubr Gradus Nefiltrovaný 12°</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Litovel Gustav 13° Nefiltrovaný</div><div class="mitem-detail">točený</div></div></div>
+          <div class="mitem"><div><div class="mitem-name">Litovel Černý 12° Premium Dark</div><div class="mitem-detail">točený</div></div></div>
         </div>
         <!-- LÍSTEK: čárkovací lístek, jde smazat celý až po KONEC LÍSTKU -->
         <div class="listek">
@@ -280,7 +286,7 @@
 
       <div class="form-off" id="formOff" hidden></div>
       <form id="orderForm">
-        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinu">
+        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinů">
         <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="fg">
@@ -334,7 +340,7 @@
         <h2>O hospůdce</h2>
         <div class="divider"></div>
         <p>
-          Vítejte v Hospůdce u Kleinu – místě, kde se setkává poctivé grilované maso,
+          Vítejte v Hospůdce u Kleinů – místě, kde se setkává poctivé grilované maso,
           přátelská atmosféra a skvěle načepovaný Zubr. Interiér je celý nový. Jsme malá hospůdka s velkou duší,
           kde si každý host přijde na své.
         </p>
@@ -370,7 +376,7 @@
           <div>
             <div class="ci-lbl">Adresa</div>
             <div class="ci-val">
-              Hospůdka u Kleinu<br>
+              Hospůdka u Kleinů<br>
               Dolní 2354/85, 700 30 Ostrava-Zábřeh
             </div>
           </div>
@@ -421,7 +427,7 @@
 
       <!-- MAPA: pivní tácek, podklad z OpenStreetMap -->
       <div class="mapa-wrap">
-        <svg class="mapa" viewBox="0 0 800 800" role="img" aria-label="Nakreslená mapa okolí: Hospůdka u Kleinu stojí v ulici Dolní v Ostravě-Zábřehu, poblíž křižovatky s ulicemi Zimmlerova a Hulvácká.">
+        <svg class="mapa" viewBox="0 0 800 800" role="img" aria-label="Nakreslená mapa okolí: Hospůdka u Kleinů stojí v ulici Dolní v Ostravě-Zábřehu, poblíž křižovatky s ulicemi Zimmlerova a Hulvácká.">
           <defs>
             <clipPath id="mapaKruh"><circle cx="400" cy="400" r="338"/></clipPath>
             <path id="mapaOkraj" d="M400 42a358 358 0 1 1-.01 0"/>
@@ -430,7 +436,7 @@
           </defs>
           <circle cx="400" cy="400" r="396" fill="#1A1E3C"/>
           <circle cx="400" cy="400" r="342" fill="#C59838"/>
-          <text class="m-rim"><textPath href="#mapaOkraj" textLength="2225" lengthAdjust="spacing">HOSPŮDKA U KLEINU  ·  ZUBR NA ČEPU  ·  DOLNÍ 2354/85  ·  OSTRAVA-ZÁBŘEH  ·  </textPath></text>
+          <text class="m-rim"><textPath href="#mapaOkraj" textLength="2225" lengthAdjust="spacing">HOSPŮDKA U KLEINŮ  ·  ZUBR NA ČEPU  ·  DOLNÍ 2354/85  ·  OSTRAVA-ZÁBŘEH  ·  </textPath></text>
           <g clip-path="url(#mapaKruh)">
             <rect width="800" height="800" fill="#F7F1E6"/>
             <g fill="#DDE2BC"><path d="M672.2 -259.2L652.9 -147L635.7 -59.1L626.9 -31.1L635.9 1.9L623.1 11.5L633.8 32.5L639.7 40.5L712.8 138.8L745.7 255.3L740.7 261.8L839.4 333.8L860.7 318.6L865.3 344L876.2 382.3L885.4 371.5L869.9 262.7L851 164.3L817.6 53.3L792.7 -18.6L764.2 -87.9L724.3 -173L672.2 -259.2Z"/><path d="M367.7 731.2L410 677L406.6 672.3L349.4 620.7L353.9 615.7L310.5 581.8L297.8 584.7L217.9 557.4L207.4 577.9L219.2 593.5L226.5 589.7L269.1 652L261.8 656.7L307.3 706.3L342 726.7L367.7 731.2Z"/></g>
@@ -451,8 +457,7 @@
             <g fill="#A4551F"><use href="#kopyto" transform="translate(404.8 414.9) rotate(-61.7)"/><use href="#kopyto" transform="translate(376.2 415.4) rotate(-61.7)"/><use href="#kopyto" transform="translate(357.9 393.1) rotate(-78.8)"/><use href="#kopyto" transform="translate(330.7 401.9) rotate(-78.8)"/><use href="#kopyto" transform="translate(308.9 383.3) rotate(-78.8)"/><use href="#kopyto" transform="translate(281.6 392.2) rotate(-78.8)"/></g>
           </g>
           <image href="assets/stit.svg" x="216.5" y="260.9" width="118" height="129.3"/>
-          <image href="assets/zubr-logo.svg" x="236.6" y="281.6" width="77.9" height="70.5"/>
-          <text class="m-name m-here" x="342.5" y="302.9" font-size="27">Tady čepujeme</text>
+          <image href="assets/zubr-logo.svg" x="235.4" y="276.4" width="80.2" height="72.7"/>
         </svg>
         <div class="mapa-btns">
           <a class="btn btn-map" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.8083669,18.2391261" target="_blank" rel="noopener">Trasa v Google Mapách</a>
@@ -469,7 +474,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinu</span></div>
+        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
         <p class="footer-text">
           Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
           Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
@@ -495,7 +500,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Hospůdka u Kleinu. Všechna práva vyhrazena.</span>
+      <span>© 2026 Hospůdka u Kleinů. Všechna práva vyhrazena.</span>
       <span>Vytvořil Adam Biely</span>
     </div>
   </div>
