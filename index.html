@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@500;700&family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -27,8 +26,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="#akce">Akce</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#objednavky">Na&nbsp;objednávku</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="objednavka.html">Na&nbsp;objednávku</a></li>
       <li><a href="#o-nas">O&nbsp;nás</a></li>
       <li><a href="#kontakt" class="cta">Kontakt</a></li>
     </ul>
@@ -39,11 +38,11 @@
 
   <!-- mobile drawer -->
   <div class="mob-menu" id="mobMenu">
-    <a href="#akce"       onclick="closeMob()">Akce</a>
-    <a href="#menu"       onclick="closeMob()">Menu</a>
-    <a href="#objednavky" onclick="closeMob()">Na objednávku</a>
-    <a href="#o-nas"     onclick="closeMob()">O nás</a>
-    <a href="#kontakt"   onclick="closeMob()">Kontakt</a>
+    <a href="#akce" onclick="closeMob()">Akce</a>
+    <a href="menu.html" onclick="closeMob()">Menu</a>
+    <a href="objednavka.html" onclick="closeMob()">Na objednávku</a>
+    <a href="#o-nas" onclick="closeMob()">O nás</a>
+    <a href="#kontakt" onclick="closeMob()">Kontakt</a>
   </div>
 </nav>
 
@@ -55,15 +54,15 @@
       <h1>U&nbsp;nás se pivo<br><em>čepuje s&nbsp;citem</em></h1>
       <p class="hero-sub">Poctivé grilované a&nbsp;zauzené maso. Malá hospůdka v&nbsp;Ostravě-Zábřehu.</p>
       <div class="hero-btns">
-        <a href="#menu"       class="btn btn-fill">Prohlédnout menu</a>
-        <a href="#objednavky" class="btn btn-outline">Jídlo na objednávku</a>
+        <a href="menu.html" class="btn btn-fill">Prohlédnout menu</a>
+        <a href="objednavka.html" class="btn btn-outline">Jídlo na objednávku</a>
       </div>
     </div>
 
     <aside class="hero-tap">
       <div class="tabule">
         <h2 class="tabule-h">Dnes čepujeme</h2>
-        <ul class="tabule-list">
+        <ul class="tabule-list" id="tabuleList">
           <li><span class="t-name">Zubr Grál</span><span class="t-deg">10°</span></li>
           <li><span class="t-name">Zubr Grand</span><span class="t-deg">11°</span></li>
           <li><span class="t-name">Zubr Gradus</span><span class="t-deg">12°</span></li>
@@ -89,245 +88,23 @@
   </div>
 </section>
 
-<!-- ══════════════ MENU ══════════════ -->
-<section id="menu">
+<!-- ══════════════ ROZCESTNÍK ══════════════ -->
+<section id="rozcestnik">
   <div class="container">
-    <div class="sec-header">
-      <div class="label">Naše nabídka</div>
-      <h2 class="title">Menu</h2>
-      <div class="divider"></div>
+    <div class="rc-grid">
+      <a class="rc-card" href="menu.html">
+        <span class="label">Z grilu a z pípy</span>
+        <span class="rc-title">Menu</span>
+        <span class="rc-text">Pomalu zauzené koleno, masitá žebra, buffalo křídla a&nbsp;Zubr s&nbsp;Litovlí na čepu.</span>
+        <span class="rc-go">Celé menu →</span>
+      </a>
+      <a class="rc-card" href="objednavka.html">
+        <span class="label">Akce &amp; oslavy</span>
+        <span class="rc-title">Jídlo na objednávku</span>
+        <span class="rc-text">Celé sele, kýta nebo roastbeef pro vaši oslavu či firemní akci.</span>
+        <span class="rc-go">Poptat jídlo →</span>
+      </a>
     </div>
-
-    <!-- TABS -->
-    <div class="tabs" role="tablist">
-      <button class="tab-btn on" onclick="switchTab(event,'napoje')"  role="tab">Nápoje</button>
-      <button class="tab-btn"    onclick="switchTab(event,'grill')"   role="tab">Grilované speciality</button>
-      <button class="tab-btn"    onclick="switchTab(event,'minutky')" role="tab">Minutky</button>
-      <button class="tab-btn"    onclick="switchTab(event,'prilohy')" role="tab">Přílohy</button>
-    </div>
-
-    <!-- Na PC dva sloupce se všemi kategoriemi, na telefonu záložky -->
-    <div class="menu-book">
-      <div class="menu-col">
-      <div class="tab-panel on" id="tp-napoje">
-        <h3 class="menu-h">Nápoje</h3>
-        <div class="mlist">
-          <div class="mitem"><div><div class="mitem-name">Zubr Grál 10°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Zubr Grand 11°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Zubr Gradus 12°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Zubr Gradus Nefiltrovaný 12°</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Litovel Gustav 13° Nefiltrovaný</div><div class="mitem-detail">točený</div></div></div>
-          <div class="mitem"><div><div class="mitem-name">Litovel Černý 12° Premium Dark</div><div class="mitem-detail">točený</div></div></div>
-        </div>
-        <!-- LÍSTEK: čárkovací lístek, jde smazat celý až po KONEC LÍSTKU -->
-        <div class="listek">
-          <div class="listek-hd">Váš lístek</div>
-          <div class="listek-carky" id="listekCarky" aria-hidden="true"></div>
-          <p class="listek-pocet" id="listekPocet" aria-live="polite">Zatím čistý</p>
-          <div class="listek-btns">
-            <button type="button" class="listek-btn" id="listekPridat">Ještě jedno</button>
-            <button type="button" class="listek-btn listek-btn-2" id="listekNovy" hidden>Nový lístek</button>
-          </div>
-          <p class="listek-pozn">Jen pro zábavu. Ten pravý vám napíšeme u stolu.</p>
-        </div>
-        <!-- KONEC LÍSTKU -->
-      </div>
-      <div class="tab-panel" id="tp-minutky">
-        <h3 class="menu-h">Minutky</h3>
-        <div class="mlist">
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Smažený sýr + hranolky</div>
-              <div class="mitem-detail">Zlatavý smažený sýr s domácími hranolkami</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Smažený hermelín + hranolky</div>
-              <div class="mitem-detail">Křupavý smažený hermelín s hranolkami</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Kuřecí řízek + americké brambory</div>
-              <div class="mitem-detail">Šťavnatý kuřecí řízek s americkými bramborami</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="menu-col">
-      <div class="tab-panel" id="tp-grill">
-        <h3 class="menu-h">Grilované speciality</h3>
-        <div class="grill-grid">
-          <div class="gcard">
-            <div class="gcard-img"></div>
-            <div class="gcard-body">
-              <div class="gcard-name">Pomalu pečené a zauzené koleno</div>
-              <div class="gcard-note">Šťavnaté koleno uzené na dřevě</div>
-            </div>
-          </div>
-          <div class="gcard">
-            <div class="gcard-img"></div>
-            <div class="gcard-body">
-              <div class="gcard-name">Žebra masitá</div>
-              <div class="gcard-note">Poctivá masitá žebra z grilu</div>
-            </div>
-          </div>
-          <div class="gcard">
-            <div class="gcard-img"></div>
-            <div class="gcard-body">
-              <div class="gcard-name">Kuřata</div>
-              <div class="gcard-note">Celá grilovaná kuřata</div>
-            </div>
-          </div>
-          <div class="gcard">
-            <div class="gcard-img"></div>
-            <div class="gcard-body">
-              <div class="gcard-name">Buffalo křídla</div>
-              <div class="gcard-note">Pikantní křídla v buffalo omáčce</div>
-            </div>
-          </div>
-          <div class="gcard">
-            <div class="gcard-img"></div>
-            <div class="gcard-body">
-              <div class="gcard-name">Buffalo kuřecí špalíky</div>
-              <div class="gcard-note">Špalíky s buffalo marinádou</div>
-            </div>
-          </div>
-        </div>
-        <p class="grill-footer">Aktuální ceny a dostupnost zjistíte přímo u nás nebo telefonicky. Nabídka se může lišit dle dne.</p>
-      </div>
-      <div class="tab-panel" id="tp-prilohy">
-        <h3 class="menu-h">Přílohy</h3>
-        <div class="mlist">
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Hranolky velké</div>
-              <div class="mitem-detail">250&nbsp;g</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Hranolky BBQ Cheese</div>
-              <div class="mitem-detail">250&nbsp;g — s BBQ omáčkou a sýrem</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Cibulové kroužky</div>
-              <div class="mitem-detail">10&nbsp;ks — křupavé v těstíčku</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Krokety</div>
-              <div class="mitem-detail">250&nbsp;g</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Americké brambory</div>
-              <div class="mitem-detail">250&nbsp;g</div>
-            </div>
-          </div>
-          <div class="mitem">
-            <div>
-              <div class="mitem-name">Americké brambory Cheese</div>
-              <div class="mitem-detail">250&nbsp;g — se sýrovou omáčkou</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="tab-note">Nový jídelní a nápojový lístek s cenami doplníme před otevřením. Nabídka se ještě může změnit.</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════ NA OBJEDNÁNÍ ══════════════ -->
-<section id="objednavky">
-  <div class="container">
-    <div class="ord-layout">
-      <div class="ord-side">
-        <div class="sec-header">
-          <div class="label">Akce &amp; oslavy</div>
-          <h2 class="title">Jídlo na objednávku</h2>
-          <p class="sec-desc">
-            Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu. Nerozvážíme, jídlo připravujeme jen na objednané akce a oslavy.
-          </p>
-          <div class="divider"></div>
-        </div>
-
-    <div class="ord-grid">
-      <div class="ocard">
-        <div class="ocard-name">Sele</div>
-        <div class="ocard-detail">cca&nbsp;20&nbsp;kg</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">Kýta</div>
-        <div class="ocard-detail">13&nbsp;–&nbsp;17&nbsp;kg</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">Roláda bůčková</div>
-        <div class="ocard-detail">Na dotaz</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">RoastBeef</div>
-        <div class="ocard-detail">Hovězí nízký roštěnec</div>
-      </div>
-    </div>
-      </div>
-
-    <div class="form-box">
-      <div class="form-hd">Poptávkový formulář</div>
-      <div class="form-sub">Vyplňte formulář a ozveme se vám.</div>
-
-      <div class="form-off" id="formOff" hidden></div>
-      <form id="orderForm">
-        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinů">
-        <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
-
-        <div class="fg">
-          <div class="fgroup">
-            <label for="f-jmeno">Jméno a příjmení *</label>
-            <input id="f-jmeno" name="Jméno" type="text" placeholder="Jan Novák" required>
-          </div>
-          <div class="fgroup">
-            <label for="f-telefon">Telefon *</label>
-            <input id="f-telefon" name="Telefon" type="tel" placeholder="+420 XXX XXX XXX" required>
-          </div>
-          <div class="fgroup full">
-            <label for="f-email">E-mail *</label>
-            <input id="f-email" name="Email" type="email" placeholder="vas@email.cz" required>
-          </div>
-          <div class="fgroup">
-            <label for="f-polozka">Objednaná položka *</label>
-            <select id="f-polozka" name="Položka" required>
-              <option value="" disabled selected>Vyberte položku</option>
-              <option>Sele (~20 kg)</option>
-              <option>Kýta (13–17 kg)</option>
-              <option>Roláda bůčková</option>
-              <option>RoastBeef – hovězí nízký roštěnec</option>
-            </select>
-          </div>
-          <div class="fgroup">
-            <label for="f-datum">Datum akce *</label>
-            <input id="f-datum" name="Datum akce" type="date" required>
-          </div>
-          <div class="fgroup full">
-            <label for="f-poznamka">Počet osob / Poznámka</label>
-            <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
-          </div>
-        </div>
-        <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší poptávky. K nám se dostanou e-mailem přes službu FormSubmit.</p>
-        <button type="submit" class="btn-send" id="formBtn">Odeslat poptávku →</button>
-      </form>
-      <div class="form-success" id="formSuccess" role="status"></div>
-    </div>
-    </div>
-
   </div>
 </section>
 
@@ -381,12 +158,12 @@
             </div>
           </div>
         </div>
-        <div class="citem" id="rowTel" hidden>
+        <div class="citem js-tel-row" id="rowTel" hidden>
           <div class="cicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l1.500 5-2 1.500a12 12 0 0 0 6 6l1.500-2 5 1.500v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
           <div>
             <div class="ci-lbl">Telefon</div>
             <div class="ci-val">
-              <a id="linkTel"></a>
+              <a id="linkTel" class="js-tel"></a>
             </div>
           </div>
         </div>
@@ -484,8 +261,8 @@
         <h4>Navigace</h4>
         <ul>
           <li><a href="#akce">Akce</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#objednavky">Na objednávku</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="objednavka.html">Na objednávku</a></li>
           <li><a href="#o-nas">O nás</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Facebook</a></li>
@@ -494,8 +271,16 @@
       <div class="footer-col">
         <h4>Otevírací doba</h4>
         <ul>
-          <li><a>Denně</a></li>
-          <li><a>15:00 – 22:00</a></li>
+          <li><span>Denně</span></li>
+          <li><span>15:00 – 22:00</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kde nás najdete</h4>
+        <ul>
+          <li><span>Dolní 2354/85</span></li>
+          <li><span>700 30 Ostrava-Zábřeh</span></li>
+          <li class="js-tel-row" hidden><a class="js-tel"></a></li>
         </ul>
       </div>
     </div>
@@ -507,6 +292,7 @@
 </footer>
 
 <script src="nastaveni.js"></script>
+<script src="menu.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

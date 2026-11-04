@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu – Hospůdka u Kleinů</title>
+  <meta name="description" content="Menu Hospůdky u Kleinů v Ostravě-Zábřehu: Zubr a Litovel na čepu, grilované a zauzené speciality, minutky a přílohy." />
+  <link rel="icon" href="assets/stit.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<!-- ══════════════ PROUŽEK S NOVINKOU ══════════════ -->
+<a href="index.html#akce" class="strip" id="strip">Velké znovuotevření · pátek 20. listopadu</a>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-shield"><img src="assets/stit.svg" alt="" class="ls-bg"><img src="assets/zubr-logo.svg" alt="Zubr" class="ls-logo"></span>
+      <span>Hospůdka u&nbsp;<em>Kleinů</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#akce">Akce</a></li>
+      <li><a href="menu.html" aria-current="page">Menu</a></li>
+      <li><a href="objednavka.html">Na&nbsp;objednávku</a></li>
+      <li><a href="index.html#o-nas">O&nbsp;nás</a></li>
+      <li><a href="index.html#kontakt" class="cta">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mob-menu" id="mobMenu">
+    <a href="index.html#akce" onclick="closeMob()">Akce</a>
+    <a href="menu.html" onclick="closeMob()" aria-current="page">Menu</a>
+    <a href="objednavka.html" onclick="closeMob()">Na objednávku</a>
+    <a href="index.html#o-nas" onclick="closeMob()">O nás</a>
+    <a href="index.html#kontakt" onclick="closeMob()">Kontakt</a>
+  </div>
+</nav>
+
+<!-- ══════════════ MENU ══════════════ -->
+<main>
+<section id="menu">
+  <div class="container">
+    <div class="sec-header">
+      <div class="label">Naše nabídka</div>
+      <h1 class="title">Menu</h1>
+      <div class="divider"></div>
+    </div>
+
+    <!-- skok na část menu, vyplní se z menu.js -->
+    <nav class="menu-skok" id="menuSkok" aria-label="Části menu"></nav>
+
+    <!-- Na PC dva sloupce: nápoje a jídlo. Obsah je v souboru menu.js -->
+    <div class="menu-book">
+      <div class="menu-col">
+        <h2 class="menu-col-h">Nápoje</h2>
+        <div id="menuNapoje"></div>
+        <!-- LÍSTEK: čárkovací lístek, jde smazat celý až po KONEC LÍSTKU -->
+        <div class="listek">
+          <div class="listek-hd">Váš lístek</div>
+          <div class="listek-carky" id="listekCarky" aria-hidden="true"></div>
+          <p class="listek-pocet" id="listekPocet" aria-live="polite">Zatím čistý</p>
+          <div class="listek-btns">
+            <button type="button" class="listek-btn" id="listekPridat">Ještě jedno</button>
+            <button type="button" class="listek-btn listek-btn-2" id="listekNovy" hidden>Nový lístek</button>
+          </div>
+          <p class="listek-pozn">Jen pro zábavu. Ten pravý vám napíšeme u stolu.</p>
+        </div>
+        <!-- KONEC LÍSTKU -->
+      </div>
+      <div class="menu-col">
+        <h2 class="menu-col-h">Jídlo</h2>
+        <div id="menuJidlo"></div>
+      </div>
+      <p class="tab-note" id="menuPozn" hidden></p>
+      <noscript><p class="tab-note">Menu se zobrazí po zapnutí JavaScriptu v prohlížeči.</p></noscript>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
+        <p class="footer-text">
+          Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
+          Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigace</h4>
+        <ul>
+          <li><a href="index.html#akce">Akce</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="objednavka.html">Na objednávku</a></li>
+          <li><a href="index.html#o-nas">O nás</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Otevírací doba</h4>
+        <ul>
+          <li><span>Denně</span></li>
+          <li><span>15:00 – 22:00</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kde nás najdete</h4>
+        <ul>
+          <li><span>Dolní 2354/85</span></li>
+          <li><span>700 30 Ostrava-Zábřeh</span></li>
+          <li class="js-tel-row" hidden><a class="js-tel"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hospůdka u Kleinů. Všechna práva vyhrazena.</span>
+      <span>Vytvořil Adam Biely</span>
+    </div>
+  </div>
+</footer>
+
+<script src="nastaveni.js"></script>
+<script src="menu.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

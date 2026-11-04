@@ -20,18 +20,12 @@
    if (!burger.contains(e.target) && !mobMenu.contains(e.target)) closeMob();
  });
 
- /* --- menu tabs --- */
- function switchTab(e, id) {
-   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
-   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
-   document.getElementById('tp-' + id).classList.add('on');
-   e.currentTarget.classList.add('on');
- }
 
  /* --- LÍSTEK: four strokes = four beers; the fifth beer crosses them and starts a new group --- */
  (function listek() {
    const MAX = 16;
    const box = document.getElementById('listekCarky');
+   if (!box) return;
    const pocet = document.getElementById('listekPocet');
    const pridat = document.getElementById('listekPridat');
    const novy = document.getElementById('listekNovy');
@@ -76,12 +70,60 @@
    document.querySelectorAll('.od-otevreni').forEach((el) => { el.textContent = ` (od ${od})`; });
  }
 
+ /* --- MENU: everything comes from menu.js --- */
+ (function menu() {
+   const M = window.MENU || {};
+   const kc = (c) => (c === '' || c == null ? '' : typeof c === 'number' ? `${c.toLocaleString('cs-CZ')}&nbsp;Kč` : esc(c));
+   const plne = (sk) => (sk || []).filter((g) => g && g.skupina && (g.polozky || []).some((p) => p && p.nazev));
+   const napoje = plne(M.napoje), jidlo = plne(M.jidlo);
+
+   // chalkboard on the main page
+   const tabule = $('tabuleList'), pivo = napoje.find((g) => g.tabule);
+   if (tabule && pivo) {
+     tabule.innerHTML = pivo.polozky.filter((p) => p && p.nazev).map((p) =>
+       `<li><span class="t-name">${esc(p.nazev)}${p.popis ? ` <small>${esc(p.popis)}</small>` : ''}</span><span class="t-deg">${esc(p.stupen || '')}</span></li>`).join('');
+   }
+
+   // the menu page
+   const boxN = $('menuNapoje'), boxJ = $('menuJidlo');
+   if (!boxN || !boxJ) return;
+   const slug = (s) => 'm-' + String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+   const skupina = (g) => `
+     <div class="mskup" id="${slug(g.skupina)}">
+       <h3 class="menu-h">${esc(g.skupina)}</h3>
+       <div class="mlist">${g.polozky.filter((p) => p && p.nazev).map((p) => {
+         const detail = [p.popis, p.objem].filter(Boolean).join(' · ');
+         const cena = kc(p.cena);
+         return `
+         <div class="mitem">
+           <div>
+             <div class="mitem-name">${esc([p.nazev, p.stupen].filter(Boolean).join(' '))}</div>
+             ${detail ? `<div class="mitem-detail">${esc(detail)}</div>` : ''}
+           </div>
+           ${cena ? `<div class="mitem-price">${cena}</div>` : ''}
+         </div>`;
+       }).join('')}
+       </div>
+       ${g.poznamka ? `<p class="mskup-pozn">${esc(g.poznamka)}</p>` : ''}
+     </div>`;
+   boxN.innerHTML = napoje.map(skupina).join('');
+   boxJ.innerHTML = jidlo.map(skupina).join('');
+
+   // the tally slip goes right under the beer
+   const listek = document.querySelector('.listek');
+   if (listek && pivo) $(slug(pivo.skupina)).after(listek);
+
+   $('menuSkok').innerHTML = [...napoje, ...jidlo].map((g) => `<a href="#${slug(g.skupina)}">${esc(g.skupina)}</a>`).join('');
+   if (M.poznamka) { $('menuPozn').textContent = M.poznamka; $('menuPozn').hidden = false; }
+ })();
+
  /* --- special events --- */
  const upcoming = (WEB.akce || [])
    .filter((a) => a && a.nazev && validDate(a.datum) && a.datum >= today)
    .sort((a, b) => a.datum.localeCompare(b.datum));
  (function drawEvents() {
    const box = $('akceObsah');
+   if (!box) return;
    if (!upcoming.length) {
      box.innerHTML = '<p class="ev-none"><b>Další akci právě chystáme</b>Termíny tady najdete, jakmile budou jisté.</p>';
      return;
@@ -254,9 +296,10 @@
  }
 
  /* --- photos --- */
- if (WEB.heroFoto) $('heroImg').style.backgroundImage = `url("${encodeURI(WEB.heroFoto)}")`;
+ if (WEB.heroFoto && $('heroImg')) $('heroImg').style.backgroundImage = `url("${encodeURI(WEB.heroFoto)}")`;
  (WEB.fotky || []).slice(0, 3).forEach((f, i) => {
    const ph = document.querySelectorAll('#mozaika .ph')[i];
+   if (!ph) return;
    ph.textContent = '';
    ph.style.backgroundImage = `url("${encodeURI(f.soubor)}")`;
    ph.setAttribute('role', 'img');
@@ -265,11 +308,13 @@
 
  /* --- contact: a blank value hides its row --- */
  if (WEB.telefon) {
-   $('linkTel').textContent = WEB.telefon;
-   $('linkTel').href = `tel:${WEB.telefon.replace(/[^\d+]/g, '')}`;
-   $('rowTel').hidden = false;
+   document.querySelectorAll('.js-tel').forEach((a) => {
+     a.textContent = WEB.telefon;
+     a.href = `tel:${WEB.telefon.replace(/[^d+]/g, '')}`;
+   });
+   document.querySelectorAll('.js-tel-row').forEach((r) => { r.hidden = false; });
  }
- if (WEB.email) {
+ if (WEB.email && $('linkMail')) {
    $('linkMail').textContent = WEB.email;
    $('linkMail').href = `mailto:${WEB.email}`;
    $('rowMail').hidden = false;
@@ -277,6 +322,7 @@
 
  /* --- order form: sends by email through FormSubmit --- */
  const orderForm   = $('orderForm');
+ if (orderForm) {
  const formSuccess = $('formSuccess');
  const formBtn     = $('formBtn');
  $('f-datum').setAttribute('min', today);
@@ -294,7 +340,7 @@
    off.textContent = 'Poptávky spouštíme už brzy.';
    if (WEB.telefon) {
      off.append(' Zatím nám prosím zavolejte na ');
-     const tel = $('linkTel').cloneNode(true);
+     const tel = document.querySelector('.js-tel').cloneNode(true);
      tel.removeAttribute('id');
      off.append(tel, '.');
    }
@@ -324,3 +370,4 @@
      formBtn.textContent = label;
    }
  });
+ }
