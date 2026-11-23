@@ -422,7 +422,8 @@
     .form-tab:hover { color: #FFFFFF; }
     .form-tab[aria-selected="true"] { color: var(--gold); border-bottom-color: var(--gold-deep); }
     .form-tab:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
-    .form-note b { color: #FFFFFF; font-weight: 600; }
+    .form-note b { display: block; color: #FFFFFF; font-weight: 600; }
+    .form-note a { white-space: nowrap; }
     .form-note a { color: var(--gold); }
     .form-note + .form-note { margin-top: 8px; }
     .form-hd { font-family: var(--font-d); font-size: 1.9rem; font-weight: 600; color: #FFFFFF; margin-bottom: 6px; }
