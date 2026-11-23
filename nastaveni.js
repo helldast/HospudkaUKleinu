@@ -44,12 +44,14 @@ window.WEB = {
 
      heroFoto = velká fotka v pozadí úvodní obrazovky.
      fotky    = tři fotky v sekci O hospůdce. Vzor:
-     { soubor: "assets/vycep.jpg", popis: "Nový výčep" },
+     { soubor: "assets/vycep.jpg", mobil: "assets/vycep-m.jpg", popis: "Nový výčep" },
+     mobil = nepovinná verze fotky na výšku pro telefon.
   */
   heroFoto: "assets/foto/lokal.jpg",
+  heroFotoMobil: "assets/foto/lokal-m.jpg",
   fotky: [
-    { soubor: "assets/foto/zed-zubr.jpg", popis: "Modrá stěna se znakem Zubru a dřevěné stoly" },
-    { soubor: "assets/foto/venku.jpg",    popis: "Vchod do Hospůdky u Kleinů v ulici Dolní" },
-    { soubor: "assets/foto/vycep.jpg",    popis: "Měděný výčep se Zubrem a Litovlí" }
+    { soubor: "assets/foto/zahradka.jpg", mobil: "assets/foto/zahradka-m.jpg", popis: "Hospůdka zvenku s lavicemi pro sezení venku" },
+    { soubor: "assets/foto/vycep.jpg",    mobil: "assets/foto/vycep-m.jpg",    popis: "Měděný výčep se Zubrem a Litovlí" },
+    { soubor: "assets/foto/zed-zubr.jpg", mobil: "assets/foto/zed-zubr-m.jpg", popis: "Modrá stěna se znakem Zubru a dřevěné stoly" }
   ]
 };

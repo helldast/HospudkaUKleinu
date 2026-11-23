@@ -300,12 +300,17 @@
  }
 
  /* --- photos --- */
- if (WEB.heroFoto && $('heroImg')) $('heroImg').style.backgroundImage = `url("${encodeURI(WEB.heroFoto)}")`;
+ const css = (f) => `url("${encodeURI(f)}")`;
+ if (WEB.heroFoto && $('heroImg')) {
+   $('heroImg').style.setProperty('--foto', css(WEB.heroFoto));
+   if (WEB.heroFotoMobil) $('heroImg').style.setProperty('--foto-m', css(WEB.heroFotoMobil));
+ }
  (WEB.fotky || []).slice(0, 3).forEach((f, i) => {
    const ph = document.querySelectorAll('#mozaika .ph')[i];
    if (!ph) return;
    ph.textContent = '';
-   ph.style.backgroundImage = `url("${encodeURI(f.soubor)}")`;
+   ph.style.setProperty('--foto', css(f.soubor));
+   if (f.mobil) ph.style.setProperty('--foto-m', css(f.mobil));
    ph.setAttribute('role', 'img');
    ph.setAttribute('aria-label', f.popis || '');
  });
