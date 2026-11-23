@@ -128,7 +128,7 @@
        if (on && jak === 'klavesa') t.focus();
      });
      if (!jak) return;
-     history.replaceState(null, '', '#' + id);
+     history.replaceState(null, '', id === 'napoje' ? location.pathname : '#' + id);   // the default tab needs no #
      // scrolled down the other list: go back to the top of the menu
      const book = document.querySelector('.menu-book'), lista = document.querySelector('.menu-lista');
      const y = book.getBoundingClientRect().top + scrollY - lista.offsetHeight - nav.offsetHeight;
@@ -360,7 +360,7 @@
  if (formBox) {
    /* the two buttons switch which form is shown; #rezervace / #jidlo links open the right one */
    const tabs = [...document.querySelectorAll('.form-tab')];
-   const ukaz = (id, fokus) => {
+   const ukaz = (id, fokus, start) => {
      tabs.forEach((t) => {
        const on = t.id === 'tab-' + id;
        t.setAttribute('aria-selected', on);
@@ -369,7 +369,7 @@
        if (on && fokus) t.focus();
      });
      document.querySelectorAll('[data-pro]').forEach((p) => { p.hidden = p.dataset.pro !== id; });
-     history.replaceState(null, '', '#' + id);
+     if (!start) history.replaceState(null, '', id === 'rezervace' ? location.pathname : '#' + id);   // the default tab needs no #
    };
    tabs.forEach((t, i) => {
      t.addEventListener('click', () => ukaz(t.id.slice(4)));
@@ -378,7 +378,7 @@
        if (k) { e.preventDefault(); ukaz(tabs[(i + k + tabs.length) % tabs.length].id.slice(4), true); }
      });
    });
-   ukaz(location.hash === '#jidlo' ? 'jidlo' : 'rezervace');
+   ukaz(location.hash === '#jidlo' ? 'jidlo' : 'rezervace', false, true);
 
    const forms = [...document.querySelectorAll('.pform')];
    document.querySelectorAll('.pform input[type="date"]').forEach((d) => d.setAttribute('min', today));
