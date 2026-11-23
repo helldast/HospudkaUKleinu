@@ -40,10 +40,10 @@ window.WEB = {
       foto: ""
     },
     {
-      nazev: "Mistr výčepní, saxofon a kolena",
+      nazev: "Kolena, saxofon a mistr za pípou",
       datum: "2026-12-11",
       cas: "",
-      popis: "Čepovat přijde mistr výčepní, hrát bude živě saxofon a k jídlu budou pečená kolena.",
+      popis: "V pátek 11. 12. vám natočí mistr výčepní, zahraje živý saxofon a upečeme kolena. Stavte se.",
       cena: "",
       foto: ""
     }

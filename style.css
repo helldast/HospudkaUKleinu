@@ -194,26 +194,31 @@
 
     /* what's on tap: a plain list, no box */
     .hero-tap { max-width: 340px; margin: 52px auto 0; }
-    /* the chalkboard: slate in a wooden frame, written in chalk */
+    /* the board: dark slate with a thin gold line, set in the site's own type */
     .tabule {
-      position: relative; padding: 22px 26px 18px;
-      background:
-        radial-gradient(ellipse 60% 40% at 30% 25%, rgba(255,255,255,.06), transparent 70%),
-        radial-gradient(ellipse 50% 35% at 75% 80%, rgba(255,255,255,.045), transparent 70%),
-        #23292B;
-      border: 12px solid #7B4B26; border-radius: 4px;
-      box-shadow: inset 0 0 0 2px #5C3519, inset 0 0 34px rgba(0,0,0,.55), 0 10px 26px rgba(0,0,0,.35);
-      font-family: 'Caveat', 'Comic Sans MS', cursive; color: #F4F1E8; text-align: left;
+      position: relative; padding: 24px 28px 20px;
+      background: #1E2426; border-radius: 6px;
+      box-shadow: inset 0 0 0 1px rgba(238,214,135,.35), 0 14px 34px rgba(0,0,0,.35);
+      color: #F4F1E8; text-align: left;
     }
-    .tabule-h, .tabule-list { filter: url(#krida); }
-    .tabule-h { font-family: inherit; font-weight: 700; font-size: 2.3rem; line-height: 1.1; color: var(--gold); margin-bottom: 8px; transform: rotate(-1.5deg); }
+    /* the one handwritten touch: the heading, like chalk on the board */
+    .tabule-h {
+      font-family: 'Caveat', 'Comic Sans MS', cursive; font-size: 2.1rem; font-weight: 700; line-height: 1.1;
+      color: var(--gold); margin-bottom: 4px;
+    }
     .tabule-list { list-style: none; }
-    .tabule-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 3px 0; font-size: 1.85rem; line-height: 1.15; font-weight: 500; }
-    .tabule-list li:nth-child(even) { transform: rotate(.4deg); }
-    .tabule-list li:nth-child(odd) { transform: rotate(-.3deg); }
-    .t-name small { display: block; font-size: 1.3rem; line-height: 1.05; color: rgba(244,241,232,.78); }
-    .t-deg { flex: none; font-weight: 700; }
-    .tabule-cas { margin-top: 12px; padding-top: 10px; border-top: 2px dashed rgba(244,241,232,.35); font-size: 1.6rem; line-height: 1.15; color: var(--gold); filter: url(#krida); transform: rotate(-.6deg); }
+    .tabule-list li {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+      padding: 9px 0; border-bottom: 1px solid rgba(244,241,232,.1);
+    }
+    .tabule-list li:last-child { border-bottom: none; }
+    .t-name { font-family: 'Bree Serif', serif; font-size: 1.22rem; line-height: 1.25; }
+    .t-name small { display: block; font-family: var(--font-b); font-size: .8rem; line-height: 1.3; color: rgba(244,241,232,.6); letter-spacing: .02em; }
+    .t-deg { flex: none; font-family: 'Bree Serif', serif; font-size: 1.22rem; color: var(--gold); }
+    .tabule-cas {
+      margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(238,214,135,.3);
+      font-size: .88rem; letter-spacing: .04em; color: rgba(244,241,232,.75);
+    }
     @media (min-width: 921px) {
       .hero { text-align: left; }
       .hero-content {
@@ -515,6 +520,8 @@
     .ci-val { font-size: .95rem; color: var(--text); font-weight: 500; line-height: 1.6; }
     .ci-val a { color: var(--accent); text-decoration: none; }
     .ci-val a:hover { text-decoration: underline; }
+    .ci-val a.ci-odkaz { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 600; }
+    .ci-val a.ci-odkaz:hover { text-decoration-thickness: 2px; }
 
 
     .mapa-wrap { min-width: 0; text-align: center; }
@@ -604,12 +611,13 @@
       .hero-btns .btn { flex: 1; padding: 12px 8px; font-size: .78rem; letter-spacing: .04em; text-align: center; }
       .hero-tap { margin-top: 30px; max-width: 360px; }
 
-      /* compact chalkboard */
-      .tabule { padding: 14px 18px 12px; border-width: 10px; }
-      .tabule-h { font-size: 1.9rem; margin-bottom: 4px; }
-      .tabule-list li { font-size: 1.5rem; padding: 1px 0; gap: 10px; }
-      .t-name small { display: inline; font-size: 1.1rem; margin-left: 3px; }
-      .tabule-cas { font-size: 1.35rem; margin-top: 8px; padding-top: 6px; }
+      /* compact board */
+      .tabule { padding: 16px 18px 14px; }
+      .tabule-h { font-size: 1.85rem; margin-bottom: 2px; }
+      .tabule-list li { padding: 7px 0; gap: 10px; }
+      .t-name, .t-deg { font-size: 1.08rem; }
+      .t-name small { display: inline; font-size: .78rem; margin-left: 4px; }
+      .tabule-cas { margin-top: 6px; padding-top: 10px; font-size: .84rem; }
 
       /* the two cards */
       #rozcestnik { padding-top: 48px; padding-bottom: 48px; }
