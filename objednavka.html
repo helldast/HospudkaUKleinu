@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jídlo na objednávku – Hospůdka u Kleinů</title>
-  <meta name="description" content="Pečené speciality na objednávku z Hospůdky u Kleinů v Ostravě: sele, kýta, bůčková roláda a roastbeef na oslavy a firemní akce." />
+  <title>Rezervace a objednávky – Hospůdka u Kleinů</title>
+  <meta name="description" content="Rezervace stolu a pečené speciality na objednávku v Hospůdce u Kleinů v Ostravě-Zábřehu." />
   <!-- náhled při sdílení odkazu (Facebook, WhatsApp, Messenger) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hospůdka u Kleinů" />
   <meta property="og:locale" content="cs_CZ" />
-  <meta property="og:title" content="Jídlo na objednávku – Hospůdka u Kleinů" />
-  <meta property="og:description" content="Pečené speciality na objednávku z Hospůdky u Kleinů v Ostravě: sele, kýta, bůčková roláda a roastbeef na oslavy a firemní akce." />
+  <meta property="og:title" content="Rezervace a objednávky – Hospůdka u Kleinů" />
+  <meta property="og:description" content="Rezervace stolu a pečené speciality na objednávku v Hospůdce u Kleinů v Ostravě-Zábřehu." />
   <meta property="og:url" content="https://helldast.github.io/HospudkaUKleinu/objednavka.html" />
   <meta property="og:image" content="https://helldast.github.io/HospudkaUKleinu/assets/sdileni.png" />
   <meta property="og:image:width" content="1200" />
@@ -27,7 +27,7 @@
 
 <body>
 <!-- ══════════════ PROUŽEK S NOVINKOU ══════════════ -->
-<a href="index.html#akce" class="strip" id="strip">Velké znovuotevření · pátek 20. listopadu</a>
+<a href="index.html#akce" class="strip" id="strip" hidden></a>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="nav" id="nav">
@@ -39,7 +39,7 @@
     <ul class="nav-links">
       <li><a href="index.html#akce">Akce</a></li>
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="objednavka.html" aria-current="page">Na&nbsp;objednávku</a></li>
+      <li><a href="objednavka.html" aria-current="page">Rezervace</a></li>
       <li><a href="index.html#o-nas">O&nbsp;nás</a></li>
       <li><a href="index.html#kontakt" class="cta">Kontakt</a></li>
     </ul>
@@ -52,7 +52,7 @@
   <div class="mob-menu" id="mobMenu">
     <a href="index.html#akce" onclick="closeMob()">Akce</a>
     <a href="menu.html" onclick="closeMob()">Menu</a>
-    <a href="objednavka.html" onclick="closeMob()" aria-current="page">Na objednávku</a>
+    <a href="objednavka.html" onclick="closeMob()" aria-current="page">Rezervace</a>
     <a href="index.html#o-nas" onclick="closeMob()">O nás</a>
     <a href="index.html#kontakt" onclick="closeMob()">Kontakt</a>
   </div>
@@ -65,79 +65,132 @@
     <div class="ord-layout">
       <div class="ord-side">
         <div class="sec-header">
-          <div class="label">Akce &amp; oslavy</div>
-          <h1 class="title">Jídlo na objednávku</h1>
-          <p class="sec-desc">
+          <h1 class="title">Rezervace a&nbsp;objednávky</h1>
+          <p class="sec-desc" data-pro="rezervace">
+            Přijďte s&nbsp;partou na pivo nebo na oslavu. Napište nám, kdy a&nbsp;kolik vás bude, a&nbsp;stůl vám podržíme. Otevřeno máme denně od&nbsp;15 do&nbsp;22&nbsp;hodin.
+          </p>
+          <p class="sec-desc" data-pro="jidlo" hidden>
             Chystáte narozeniny, rodinnou oslavu nebo firemní akci? Objednejte si od nás pečené speciality pro celou partu. Nerozvážíme, jídlo připravujeme jen na objednané akce a oslavy.
           </p>
           <div class="divider"></div>
         </div>
 
-    <div class="ord-grid">
-      <div class="ocard">
-        <div class="ocard-name">Sele</div>
-        <div class="ocard-detail">cca&nbsp;20&nbsp;kg</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">Kýta</div>
-        <div class="ocard-detail">13&nbsp;–&nbsp;17&nbsp;kg</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">Roláda bůčková</div>
-        <div class="ocard-detail">Na dotaz</div>
-      </div>
-      <div class="ocard">
-        <div class="ocard-name">RoastBeef</div>
-        <div class="ocard-detail">Hovězí nízký roštěnec</div>
-      </div>
-    </div>
       </div>
 
     <div class="form-box">
-      <div class="form-hd">Poptávkový formulář</div>
-      <div class="form-sub">Vyplňte formulář a ozveme se vám.</div>
+      <!-- dvě tlačítka přepínají mezi formuláři -->
+      <div class="form-tabs" role="tablist" aria-label="Typ formuláře">
+        <button type="button" class="form-tab" role="tab" id="tab-rezervace" aria-controls="panel-rezervace" aria-selected="true">Rezervace stolu</button>
+        <button type="button" class="form-tab" role="tab" id="tab-jidlo" aria-controls="panel-jidlo" aria-selected="false" tabindex="-1">Jídlo na objednávku</button>
+      </div>
 
       <div class="form-off" id="formOff" hidden></div>
-      <form id="orderForm">
-        <input type="hidden" name="_subject"  value="Nová poptávka – Hospůdka u Kleinů">
-        <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
 
-        <div class="fg">
-          <div class="fgroup">
-            <label for="f-jmeno">Jméno a příjmení *</label>
-            <input id="f-jmeno" name="Jméno" type="text" placeholder="Jan Novák" required>
+      <!-- REZERVACE STOLU -->
+      <div class="form-panel" role="tabpanel" id="panel-rezervace" aria-labelledby="tab-rezervace">
+        <div class="form-hd">Rezervace stolu</div>
+        <div class="form-sub">Vyplňte formulář a rezervaci vám potvrdíme.</div>
+        <form id="rezForm" class="pform">
+          <input type="hidden" name="_subject" value="Rezervace stolu – Hospůdka u Kleinů">
+          <input type="text"   name="_honey"   style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="fg">
+            <div class="fgroup">
+              <label for="r-jmeno">Jméno a příjmení *</label>
+              <input id="r-jmeno" name="Jméno" type="text" placeholder="Jan Novák" autocomplete="name" required>
+            </div>
+            <div class="fgroup">
+              <label for="r-telefon">Telefon *</label>
+              <input id="r-telefon" name="Telefon" type="tel" placeholder="+420 XXX XXX XXX" autocomplete="tel" required>
+            </div>
+            <div class="fgroup">
+              <label for="r-datum">Datum *</label>
+              <input id="r-datum" name="Datum" type="date" required>
+            </div>
+            <div class="fgroup">
+              <label for="r-cas">Čas *</label>
+              <select id="r-cas" name="Čas" required>
+                <option value="" disabled selected>Vyberte čas</option>
+                <option>15:00</option>
+                <option>15:30</option>
+                <option>16:00</option>
+                <option>16:30</option>
+                <option>17:00</option>
+                <option>17:30</option>
+                <option>18:00</option>
+                <option>18:30</option>
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+              </select>
+            </div>
+            <div class="fgroup">
+              <label for="r-osoby">Počet osob *</label>
+              <input id="r-osoby" name="Počet osob" type="number" inputmode="numeric" min="1" max="60" placeholder="4" required>
+            </div>
+            <div class="fgroup">
+              <label for="r-email">E-mail (nepovinný)</label>
+              <input id="r-email" name="Email" type="email" placeholder="vas@email.cz" autocomplete="email">
+            </div>
+            <div class="fgroup full">
+              <label for="r-poznamka">Poznámka</label>
+              <textarea id="r-poznamka" name="Poznámka" placeholder="Oslava, stůl u okna, dětská židlička…"></textarea>
+            </div>
           </div>
-          <div class="fgroup">
-            <label for="f-telefon">Telefon *</label>
-            <input id="f-telefon" name="Telefon" type="tel" placeholder="+420 XXX XXX XXX" required>
+          <p class="form-note"><b>Rezervace platí, až vám ji potvrdíme.</b> Na dnešek nám raději zavolejte<span class="js-tel-row" hidden> na <a class="js-tel"></a></span>.</p>
+          <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší rezervace. K nám se dostanou e-mailem přes službu FormSubmit.</p>
+          <button type="submit" class="btn-send">Odeslat rezervaci →</button>
+        </form>
+        <div class="form-success" role="status"></div>
+      </div>
+
+      <!-- JÍDLO NA OBJEDNÁVKU -->
+      <div class="form-panel" role="tabpanel" id="panel-jidlo" aria-labelledby="tab-jidlo" hidden>
+        <div class="form-hd">Jídlo na objednávku</div>
+        <div class="form-sub">Vyplňte formulář a ozveme se vám.</div>
+        <form id="orderForm" class="pform">
+          <input type="hidden" name="_subject"  value="Poptávka jídla – Hospůdka u Kleinů">
+          <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off">
+  
+          <div class="fg">
+            <div class="fgroup">
+              <label for="f-jmeno">Jméno a příjmení *</label>
+              <input id="f-jmeno" name="Jméno" type="text" placeholder="Jan Novák" required>
+            </div>
+            <div class="fgroup">
+              <label for="f-telefon">Telefon *</label>
+              <input id="f-telefon" name="Telefon" type="tel" placeholder="+420 XXX XXX XXX" required>
+            </div>
+            <div class="fgroup full">
+              <label for="f-email">E-mail *</label>
+              <input id="f-email" name="Email" type="email" placeholder="vas@email.cz" required>
+            </div>
+            <div class="fgroup">
+              <label for="f-polozka">Objednaná položka *</label>
+              <select id="f-polozka" name="Položka" required>
+                <option value="" disabled selected>Vyberte položku</option>
+                <option>Sele (~20 kg)</option>
+                <option>Kýta (13–17 kg)</option>
+                <option>Roláda bůčková</option>
+                <option>RoastBeef – hovězí nízký roštěnec</option>
+              </select>
+            </div>
+            <div class="fgroup">
+              <label for="f-datum">Datum akce *</label>
+              <input id="f-datum" name="Datum akce" type="date" required>
+            </div>
+            <div class="fgroup full">
+              <label for="f-poznamka">Počet osob / Poznámka</label>
+              <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
+            </div>
           </div>
-          <div class="fgroup full">
-            <label for="f-email">E-mail *</label>
-            <input id="f-email" name="Email" type="email" placeholder="vas@email.cz" required>
-          </div>
-          <div class="fgroup">
-            <label for="f-polozka">Objednaná položka *</label>
-            <select id="f-polozka" name="Položka" required>
-              <option value="" disabled selected>Vyberte položku</option>
-              <option>Sele (~20 kg)</option>
-              <option>Kýta (13–17 kg)</option>
-              <option>Roláda bůčková</option>
-              <option>RoastBeef – hovězí nízký roštěnec</option>
-            </select>
-          </div>
-          <div class="fgroup">
-            <label for="f-datum">Datum akce *</label>
-            <input id="f-datum" name="Datum akce" type="date" required>
-          </div>
-          <div class="fgroup full">
-            <label for="f-poznamka">Počet osob / Poznámka</label>
-            <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
-          </div>
-        </div>
-        <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší poptávky. K nám se dostanou e-mailem přes službu FormSubmit.</p>
-        <button type="submit" class="btn-send" id="formBtn">Odeslat poptávku →</button>
-      </form>
-      <div class="form-success" id="formSuccess" role="status"></div>
+          <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší poptávky. K nám se dostanou e-mailem přes službu FormSubmit.</p>
+          <button type="submit" class="btn-send">Odeslat poptávku →</button>
+        </form>
+        <div class="form-success" role="status"></div>
+      </div>
     </div>
     </div>
 
@@ -153,7 +206,7 @@
         <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
         <p class="footer-text">
           Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
-          Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
+          Rádi vás uvítáme každý den od 15:00.
         </p>
       </div>
       <div class="footer-col">
@@ -161,7 +214,7 @@
         <ul>
           <li><a href="index.html#akce">Akce</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li><a href="objednavka.html" aria-current="page">Na objednávku</a></li>
+          <li><a href="objednavka.html" aria-current="page">Rezervace</a></li>
           <li><a href="index.html#o-nas">O nás</a></li>
           <li><a href="index.html#kontakt">Kontakt</a></li>
           <li><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Facebook</a></li>

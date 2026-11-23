@@ -107,13 +107,16 @@
        ${g.poznamka ? `<p class="mskup-pozn">${esc(g.poznamka)}</p>` : ''}
      </div>`;
    boxN.innerHTML = napoje.map(skupina).join('');
-   boxJ.innerHTML = jidlo.map(skupina).join('');
+   const brzy = (t) => `<p class="menu-brzy">${t}</p>`;
+   boxN.innerHTML = napoje.length ? boxN.innerHTML : brzy('Nápojový lístek doplníme už brzy.');
+   boxJ.innerHTML = jidlo.length ? jidlo.map(skupina).join('') : brzy('Jídelní lístek právě dokončujeme. Doplníme ho už brzy.');
 
    // the tally slip goes right under the beer
    const listek = document.querySelector('.listek');
    if (listek && pivo) $(slug(pivo.skupina)).after(listek);
 
-   $('menuSkok').innerHTML = [...napoje, ...jidlo].map((g) => `<a href="#${slug(g.skupina)}">${esc(g.skupina)}</a>`).join('');
+   const vse = [...napoje, ...jidlo];
+   if (vse.length > 1) $('menuSkok').innerHTML = vse.map((g) => `<a href="#${slug(g.skupina)}">${esc(g.skupina)}</a>`).join('');
    if (M.poznamka) { $('menuPozn').textContent = M.poznamka; $('menuPozn').hidden = false; }
  })();
 
@@ -290,6 +293,7 @@
  /* --- news strip: always the next event, hidden when there is none --- */
  if (upcoming.length) {
    const next = upcoming[0];
+   $('strip').hidden = false;
    $('strip').textContent = `${next.nazev} · ${fmt(next.datum, { weekday: 'long', day: 'numeric', month: 'long' })}`;
  } else {
    $('strip').hidden = true;
@@ -320,54 +324,80 @@
    $('rowMail').hidden = false;
  }
 
- /* --- order form: sends by email through FormSubmit --- */
- const orderForm   = $('orderForm');
- if (orderForm) {
- const formSuccess = $('formSuccess');
- const formBtn     = $('formBtn');
- $('f-datum').setAttribute('min', today);
-
- function formSay(text, bad) {
-   formSuccess.textContent = text;
-   formSuccess.classList.toggle('bad', !!bad);
-   formSuccess.classList.add('show');
- }
-
- /* no address yet: say so up front rather than after the visitor has typed */
- if (!WEB.email) {
-   orderForm.querySelectorAll('input, select, textarea, button').forEach((el) => { el.disabled = true; });
-   const off = $('formOff');
-   off.textContent = 'Poptávky spouštíme už brzy.';
-   if (WEB.telefon) {
-     off.append(' Zatím nám prosím zavolejte na ');
-     const tel = document.querySelector('.js-tel').cloneNode(true);
-     tel.removeAttribute('id');
-     off.append(tel, '.');
-   }
-   off.hidden = false;
- }
-
- orderForm.addEventListener('submit', async (e) => {
-   e.preventDefault();
-   formSuccess.classList.remove('show');
-   const label = formBtn.textContent;
-   formBtn.disabled = true;
-   formBtn.textContent = 'Odesílám…';
-   try {
-     const data = Object.fromEntries(new FormData(orderForm));
-     const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(WEB.email)}`, {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-       body: JSON.stringify({ ...data, _template: 'table', _captcha: 'false' })
+ /* --- FORMS: table reservation and food order, both sent by email through FormSubmit --- */
+ const formBox = document.querySelector('.form-box');
+ if (formBox) {
+   /* the two buttons switch which form is shown; #rezervace / #jidlo links open the right one */
+   const tabs = [...document.querySelectorAll('.form-tab')];
+   const ukaz = (id, fokus) => {
+     tabs.forEach((t) => {
+       const on = t.id === 'tab-' + id;
+       t.setAttribute('aria-selected', on);
+       t.tabIndex = on ? 0 : -1;
+       $(t.getAttribute('aria-controls')).hidden = !on;
+       if (on && fokus) t.focus();
      });
-     if (!res.ok) throw new Error(res.status);
-     orderForm.reset();
-     formSay('Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.');
-   } catch (err) {
-     formSay('Poptávku se nepodařilo odeslat. Vaše údaje zůstaly ve formuláři, zkuste to prosím znovu.', true);
-   } finally {
-     formBtn.disabled = false;
-     formBtn.textContent = label;
+     document.querySelectorAll('[data-pro]').forEach((p) => { p.hidden = p.dataset.pro !== id; });
+     history.replaceState(null, '', '#' + id);
+   };
+   tabs.forEach((t, i) => {
+     t.addEventListener('click', () => ukaz(t.id.slice(4)));
+     t.addEventListener('keydown', (e) => {
+       const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+       if (k) { e.preventDefault(); ukaz(tabs[(i + k + tabs.length) % tabs.length].id.slice(4), true); }
+     });
+   });
+   ukaz(location.hash === '#jidlo' ? 'jidlo' : 'rezervace');
+
+   const forms = [...document.querySelectorAll('.pform')];
+   document.querySelectorAll('.pform input[type="date"]').forEach((d) => d.setAttribute('min', today));
+
+   /* no address yet: say so up front rather than after the visitor has typed */
+   if (!WEB.email) {
+     forms.forEach((f) => f.querySelectorAll('input, select, textarea, button').forEach((el) => { el.disabled = true; }));
+     const off = $('formOff');
+     off.textContent = 'Rezervace a poptávky spouštíme už brzy.';
+     const telLink = document.querySelector('.js-tel');
+     if (WEB.telefon && telLink) {
+       off.append(' Zatím nám prosím zavolejte na ');
+       const tel = telLink.cloneNode(true);
+       off.append(tel, '.');
+     }
+     off.hidden = false;
    }
- });
+
+   const DIKY = {
+     rezForm: 'Děkujeme! Rezervaci jsme přijali. Ozveme se vám a potvrdíme ji.',
+     orderForm: 'Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.'
+   };
+   forms.forEach((form) => {
+     const btn = form.querySelector('.btn-send');
+     const say = form.nextElementSibling;
+     form.addEventListener('submit', async (e) => {
+       e.preventDefault();
+       say.classList.remove('show', 'bad');
+       const label = btn.textContent;
+       btn.disabled = true;
+       btn.textContent = 'Odesílám…';
+       try {
+         // empty optional fields are left out of the email
+         const data = Object.fromEntries([...new FormData(form)].filter(([k, v]) => v !== '' || k === '_honey'));
+         const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(WEB.email)}`, {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+           body: JSON.stringify({ ...data, _template: 'table', _captcha: 'false' })
+         });
+         if (!res.ok) throw new Error(res.status);
+         form.reset();
+         say.textContent = DIKY[form.id];
+       } catch (err) {
+         say.textContent = 'Odeslání se nepodařilo. Vaše údaje zůstaly ve formuláři, zkuste to prosím znovu.';
+         say.classList.add('bad');
+       } finally {
+         say.classList.add('show');
+         btn.disabled = false;
+         btn.textContent = label;
+       }
+     });
+   });
  }

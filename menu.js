@@ -17,7 +17,7 @@
 window.MENU = {
 
   /* Poznámka pod menu. Prázdné "" = nezobrazí se. */
-  poznamka: "Nový jídelní a nápojový lístek s cenami doplníme před otevřením. Nabídka se ještě může změnit.",
+  poznamka: "Ceny doplníme už brzy.",
 
   /* ── NÁPOJE ──────────────────────────────────────────────────── */
   napoje: [
@@ -53,37 +53,16 @@ window.MENU = {
     }
   ],
 
-  /* ── JÍDLO ───────────────────────────────────────────────────── */
-  jidlo: [
-    {
-      skupina: "Grilované speciality",
-      poznamka: "Aktuální ceny a dostupnost zjistíte přímo u nás nebo telefonicky. Nabídka se může lišit dle dne.",
-      polozky: [
-        { nazev: "Pomalu pečené a zauzené koleno", popis: "Šťavnaté koleno uzené na dřevě",  objem: "", cena: "" },
-        { nazev: "Žebra masitá",                   popis: "Poctivá masitá žebra z grilu",    objem: "", cena: "" },
-        { nazev: "Kuřata",                         popis: "Celá grilovaná kuřata",           objem: "", cena: "" },
-        { nazev: "Buffalo křídla",                 popis: "Pikantní křídla v buffalo omáčce", objem: "", cena: "" },
-        { nazev: "Buffalo kuřecí špalíky",         popis: "Špalíky s buffalo marinádou",     objem: "", cena: "" }
-      ]
-    },
-    {
-      skupina: "Minutky",
-      polozky: [
-        { nazev: "Smažený sýr + hranolky",           popis: "Zlatavý smažený sýr s domácími hranolkami",    objem: "", cena: "" },
-        { nazev: "Smažený hermelín + hranolky",      popis: "Křupavý smažený hermelín s hranolkami",        objem: "", cena: "" },
-        { nazev: "Kuřecí řízek + americké brambory", popis: "Šťavnatý kuřecí řízek s americkými bramborami", objem: "", cena: "" }
-      ]
-    },
-    {
-      skupina: "Přílohy",
-      polozky: [
-        { nazev: "Hranolky velké",           popis: "",                         objem: "250 g", cena: "" },
-        { nazev: "Hranolky BBQ Cheese",      popis: "S BBQ omáčkou a sýrem",    objem: "250 g", cena: "" },
-        { nazev: "Cibulové kroužky",         popis: "Křupavé v těstíčku",       objem: "10 ks", cena: "" },
-        { nazev: "Krokety",                  popis: "",                         objem: "250 g", cena: "" },
-        { nazev: "Americké brambory",        popis: "",                         objem: "250 g", cena: "" },
-        { nazev: "Americké brambory Cheese", popis: "Se sýrovou omáčkou",       objem: "250 g", cena: "" }
-      ]
-    }
-  ]
+  /* ── JÍDLO ───────────────────────────────────────────────────
+     Dokud tu nic není, stránka Menu píše "Jídelní lístek doplníme už brzy."
+     Vzor:
+     {
+       skupina: "Grilované speciality",
+       poznamka: "",   // nepovinné, krátká věta pod skupinou
+       polozky: [
+         { nazev: "Pečené koleno", popis: "uzené na dřevě", objem: "cca 1 kg", cena: 299 },
+       ]
+     },
+  */
+  jidlo: []
 };

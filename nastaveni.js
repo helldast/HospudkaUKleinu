@@ -46,6 +46,10 @@ window.WEB = {
      fotky    = tři fotky v sekci O hospůdce. Vzor:
      { soubor: "assets/vycep.jpg", popis: "Nový výčep" },
   */
-  heroFoto: "",
-  fotky: []
+  heroFoto: "assets/foto/lokal.jpg",
+  fotky: [
+    { soubor: "assets/foto/zed-zubr.jpg", popis: "Modrá stěna se znakem Zubru a dřevěné stoly" },
+    { soubor: "assets/foto/venku.jpg",    popis: "Vchod do Hospůdky u Kleinů v ulici Dolní" },
+    { soubor: "assets/foto/vycep.jpg",    popis: "Měděný výčep se Zubrem a Litovlí" }
+  ]
 };

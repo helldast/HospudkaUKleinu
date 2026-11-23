@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hospůdka u Kleinů – Ostrava-Zábřeh</title>
-  <meta name="description" content="Hospůdka u Kleinů v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
+  <meta name="description" content="Hospůdka u Kleinů v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Otevřeno denně 15:00–22:00." />
   <!-- náhled při sdílení odkazu (Facebook, WhatsApp, Messenger) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hospůdka u Kleinů" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:title" content="Hospůdka u Kleinů – Ostrava-Zábřeh" />
-  <meta property="og:description" content="Hospůdka u Kleinů v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Velké znovuotevření 20. listopadu 2026. Otevřeno denně 15:00–22:00." />
+  <meta property="og:description" content="Hospůdka u Kleinů v Ostravě-Zábřehu: grilované a zauzené maso, Zubr na čepu, speciální akce a jídlo na objednávku. Otevřeno denně 15:00–22:00." />
   <meta property="og:url" content="https://helldast.github.io/HospudkaUKleinu/" />
   <meta property="og:image" content="https://helldast.github.io/HospudkaUKleinu/assets/sdileni.png" />
   <meta property="og:image:width" content="1200" />
@@ -28,7 +28,7 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="krida"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" result="sum"/><feDisplacementMap in="SourceGraphic" in2="sum" scale="1.6"/></filter></svg>
 <!-- ══════════════ PROUŽEK S NOVINKOU ══════════════ -->
-<a href="#akce" class="strip" id="strip">Velké znovuotevření · pátek 20. listopadu</a>
+<a href="#akce" class="strip" id="strip" hidden></a>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="nav" id="nav">
@@ -40,7 +40,7 @@
     <ul class="nav-links">
       <li><a href="#akce">Akce</a></li>
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="objednavka.html">Na&nbsp;objednávku</a></li>
+      <li><a href="objednavka.html">Rezervace</a></li>
       <li><a href="#o-nas">O&nbsp;nás</a></li>
       <li><a href="#kontakt" class="cta">Kontakt</a></li>
     </ul>
@@ -53,7 +53,7 @@
   <div class="mob-menu" id="mobMenu">
     <a href="#akce" onclick="closeMob()">Akce</a>
     <a href="menu.html" onclick="closeMob()">Menu</a>
-    <a href="objednavka.html" onclick="closeMob()">Na objednávku</a>
+    <a href="objednavka.html" onclick="closeMob()">Rezervace</a>
     <a href="#o-nas" onclick="closeMob()">O nás</a>
     <a href="#kontakt" onclick="closeMob()">Kontakt</a>
   </div>
@@ -68,7 +68,7 @@
       <p class="hero-sub">Poctivé grilované a&nbsp;zauzené maso. Malá hospůdka v&nbsp;Ostravě-Zábřehu.</p>
       <div class="hero-btns">
         <a href="menu.html" class="btn btn-fill">Prohlédnout menu</a>
-        <a href="objednavka.html" class="btn btn-outline">Jídlo na objednávku</a>
+        <a href="objednavka.html#rezervace" class="btn btn-outline">Rezervovat stůl</a>
       </div>
     </div>
 
@@ -93,7 +93,6 @@
 <section id="akce">
   <div class="container">
     <div class="sec-header">
-      <div class="label">Co chystáme</div>
       <h2 class="title">Speciální akce</h2>
       <div class="divider"></div>
     </div>
@@ -106,16 +105,14 @@
   <div class="container">
     <div class="rc-grid">
       <a class="rc-card" href="menu.html">
-        <span class="label">Z grilu a z pípy</span>
         <span class="rc-title">Menu</span>
-        <span class="rc-text">Pomalu zauzené koleno, masitá žebra, buffalo křídla a&nbsp;Zubr s&nbsp;Litovlí na čepu.</span>
+        <span class="rc-text">Zubr a&nbsp;Litovel na čepu. Jídelní lístek doplníme už brzy.</span>
         <span class="rc-go">Celé menu →</span>
       </a>
-      <a class="rc-card" href="objednavka.html">
-        <span class="label">Akce &amp; oslavy</span>
-        <span class="rc-title">Jídlo na objednávku</span>
-        <span class="rc-text">Celé sele, kýta nebo roastbeef pro vaši oslavu či firemní akci.</span>
-        <span class="rc-go">Poptat jídlo →</span>
+      <a class="rc-card" href="objednavka.html#rezervace">
+        <span class="rc-title">Rezervace a&nbsp;objednávky</span>
+        <span class="rc-text">Rezervujte si stůl, nebo si objednejte pečené speciality na oslavu či firemní akci.</span>
+        <span class="rc-go">Rezervovat stůl →</span>
       </a>
     </div>
   </div>
@@ -126,7 +123,6 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <div class="label">Náš příběh</div>
         <h2>O hospůdce</h2>
         <div class="divider"></div>
         <p>
@@ -153,7 +149,6 @@
 <section id="kontakt">
   <div class="container">
     <div class="sec-header">
-      <div class="label">Kde nás najdete</div>
       <h2 class="title">Kontakt &amp; Adresa</h2>
       <div class="divider"></div>
     </div>
@@ -267,7 +262,7 @@
         <div class="footer-logo">Hospůdka <span>u&nbsp;Kleinů</span></div>
         <p class="footer-text">
           Poctivé grilované a zauzené speciality, skvěle načepované pivo a přátelská atmosféra.
-          Od 20. listopadu 2026 vás rádi uvítáme každý den od 15:00.
+          Rádi vás uvítáme každý den od 15:00.
         </p>
       </div>
       <div class="footer-col">
@@ -275,7 +270,7 @@
         <ul>
           <li><a href="#akce">Akce</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li><a href="objednavka.html">Na objednávku</a></li>
+          <li><a href="objednavka.html">Rezervace</a></li>
           <li><a href="#o-nas">O nás</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="https://www.facebook.com/groups/791222916589231/" target="_blank" rel="noopener">Facebook</a></li>
