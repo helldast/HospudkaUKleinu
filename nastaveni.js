@@ -8,8 +8,8 @@ window.WEB = {
      Na "email" chodí poptávky z formuláře. Dokud je prázdný, formulář
      je vypnutý. Po první poptávce přijde na tento e-mail od FormSubmit
      potvrzení, které je potřeba jednou odkliknout. */
-  email: "",
-  telefon: "",            // např. "+420 777 123 456"
+  email: "hospudkaukleinu@seznam.cz",
+  telefon: "+420 721 003 707",
 
   /* Datum znovuotevření. Do tohoto dne web ukazuje, že se otevírá. */
   otevreni: "2026-11-20",
@@ -34,6 +34,14 @@ window.WEB = {
       datum: "2026-11-20",
       cas: "",
       popis: "Nový interiér a jednotná cena piva 38 Kč po celý víkend",
+      cena: "",
+      foto: ""
+    },
+    {
+      nazev: "Mistr výčepní, saxofon a kolena",
+      datum: "2026-12-11",
+      cas: "",
+      popis: "Čepovat přijde mistr výčepní, hrát bude živě saxofon a k jídlu budou pečená kolena.",
       cena: "",
       foto: ""
     }

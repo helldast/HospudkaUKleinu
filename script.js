@@ -319,7 +319,7 @@
  if (WEB.telefon) {
    document.querySelectorAll('.js-tel').forEach((a) => {
      a.textContent = WEB.telefon;
-     a.href = `tel:${WEB.telefon.replace(/[^d+]/g, '')}`;
+     a.href = `tel:${WEB.telefon.replace(/[^0-9+]/g, '')}`;
    });
    document.querySelectorAll('.js-tel-row').forEach((r) => { r.hidden = false; });
  }

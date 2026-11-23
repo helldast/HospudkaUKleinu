@@ -17,7 +17,7 @@
 window.MENU = {
 
   /* Poznámka pod menu. Prázdné "" = nezobrazí se. */
-  poznamka: "Ceny doplníme už brzy.",
+  poznamka: "",
 
   /* ── NÁPOJE ──────────────────────────────────────────────────── */
   napoje: [
@@ -36,7 +36,20 @@ window.MENU = {
     {
       skupina: "Nealkoholické nápoje",
       polozky: [
-        // { nazev: "Kofola", popis: "točená", objem: "0,5 l", cena: 45 },
+        { nazev: "Kofola", popis: "", objem: "", cena: "" },
+        { nazev: "Royal Crown Cola", popis: "i bez cukru", objem: "", cena: "" },
+        { nazev: "Targa Tonica", popis: "", objem: "", cena: "" },
+        { nazev: "Vinea", popis: "", objem: "", cena: "" },
+        { nazev: "Curiosa", popis: "pomeranč, jablko, jahoda", objem: "", cena: "" },
+        { nazev: "Rajec", popis: "pramenitá voda", objem: "", cena: "" },
+      ]
+    },
+    {
+      skupina: "Víno",
+      polozky: [
+        { nazev: "Rozlévané víno", popis: "suché", objem: "", cena: "" },
+        { nazev: "Rozlévané víno", popis: "polosuché", objem: "", cena: "" },
+        { nazev: "Prosecco", popis: "", objem: "", cena: "" },
       ]
     },
     {
@@ -48,7 +61,30 @@ window.MENU = {
     {
       skupina: "Lihoviny",
       polozky: [
-        // { nazev: "Slivovice", popis: "", objem: "0,04 l", cena: 60 },
+        { nazev: "Božkov Originál", popis: "tuzemský rum", objem: "", cena: "" },
+        { nazev: "Božkov Peprmint", popis: "likér", objem: "", cena: "" },
+        { nazev: "Stock Fernet", popis: "bylinný likér", objem: "", cena: "" },
+        { nazev: "Stock Fernet Citrus", popis: "bylinný likér", objem: "", cena: "" },
+        { nazev: "Stará myslivecká", popis: "", objem: "", cena: "" },
+        { nazev: "Koniferum", popis: "borovička", objem: "", cena: "" },
+        { nazev: "R. Jelínek Moravská hruška", popis: "", objem: "", cena: "" },
+        { nazev: "Tatratea", popis: "52 %", objem: "", cena: "" },
+        { nazev: "Beefeater", popis: "gin", objem: "", cena: "" },
+        { nazev: "Sierra", popis: "tequila", objem: "", cena: "" },
+        { nazev: "Metaxa 5*", popis: "brandy", objem: "", cena: "" },
+        { nazev: "Ararat 5*", popis: "brandy", objem: "", cena: "" },
+        { nazev: "Captain Morgan Spiced Gold", popis: "rum", objem: "", cena: "" },
+        { nazev: "Planteray Original Dark", popis: "rum", objem: "", cena: "" },
+        { nazev: "Republica", popis: "rum", objem: "", cena: "" },
+        { nazev: "Bumbu", popis: "rum", objem: "", cena: "" },
+        { nazev: "Don Papa Masskara", popis: "rum", objem: "", cena: "" },
+        { nazev: "Barceló Gran Añejo", popis: "rum", objem: "", cena: "" },
+        { nazev: "Jameson", popis: "irská whiskey", objem: "", cena: "" },
+        { nazev: "Tullamore D.E.W.", popis: "irská whiskey", objem: "", cena: "" },
+        { nazev: "Jim Beam", popis: "bourbon", objem: "", cena: "" },
+        { nazev: "Johnnie Walker Red Label", popis: "skotská whisky", objem: "", cena: "" },
+        { nazev: "Ballantine's Finest", popis: "skotská whisky", objem: "", cena: "" },
+        { nazev: "Grant's", popis: "skotská whisky", objem: "", cena: "" },
       ]
     }
   ],

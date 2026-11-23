@@ -75,6 +75,29 @@
           <div class="divider"></div>
         </div>
 
+        <!-- co se dá objednat; ukazuje se jen u "Jídlo na objednávku" -->
+        <div class="ord-grid" data-pro="jidlo" hidden>
+          <div class="ocard">
+            <div class="ocard-name">Sele</div>
+            <div class="ocard-detail">cca&nbsp;20&nbsp;kg</div>
+          </div>
+          <div class="ocard">
+            <div class="ocard-name">Kýta</div>
+            <div class="ocard-detail">13&nbsp;–&nbsp;17&nbsp;kg</div>
+          </div>
+          <div class="ocard">
+            <div class="ocard-name">Krůta</div>
+            <div class="ocard-detail">12&nbsp;–&nbsp;17&nbsp;kg</div>
+          </div>
+          <div class="ocard">
+            <div class="ocard-name">Koleno</div>
+            <div class="ocard-detail">750&nbsp;g&nbsp;–&nbsp;2&nbsp;kg<br>max.&nbsp;20&nbsp;kg</div>
+          </div>
+          <div class="ocard">
+            <div class="ocard-name">Žebra</div>
+            <div class="ocard-detail">450&nbsp;g&nbsp;–&nbsp;1&nbsp;kg<br>max.&nbsp;20&nbsp;kg</div>
+          </div>
+        </div>
       </div>
 
     <div class="form-box">
@@ -135,8 +158,8 @@
               <input id="r-email" name="Email" type="email" placeholder="vas@email.cz" autocomplete="email">
             </div>
             <div class="fgroup full">
-              <label for="r-poznamka">Poznámka</label>
-              <textarea id="r-poznamka" name="Poznámka" placeholder="Oslava, stůl u okna, dětská židlička…"></textarea>
+              <label for="r-poznamka">Poznámka (nepovinná)</label>
+              <textarea id="r-poznamka" name="Poznámka"></textarea>
             </div>
           </div>
           <p class="form-note"><b>Rezervace platí, až vám ji potvrdíme.</b> Na dnešek nám raději zavolejte<span class="js-tel-row" hidden> na <a class="js-tel"></a></span>.</p>
@@ -173,8 +196,9 @@
                 <option value="" disabled selected>Vyberte položku</option>
                 <option>Sele (~20 kg)</option>
                 <option>Kýta (13–17 kg)</option>
-                <option>Roláda bůčková</option>
-                <option>RoastBeef – hovězí nízký roštěnec</option>
+                <option>Krůta (12–17 kg)</option>
+                <option>Koleno (750 g – 2 kg, max. 20 kg)</option>
+                <option>Žebra (450 g – 1 kg, max. 20 kg)</option>
               </select>
             </div>
             <div class="fgroup">
@@ -182,8 +206,12 @@
               <input id="f-datum" name="Datum akce" type="date" required>
             </div>
             <div class="fgroup full">
-              <label for="f-poznamka">Počet osob / Poznámka</label>
-              <textarea id="f-poznamka" name="Poznámka" placeholder="Počet hostů, místo konání, jiné požadavky…"></textarea>
+              <label for="f-mnozstvi">Kolik potřebujete *</label>
+              <input id="f-mnozstvi" name="Množství" type="text" placeholder="např. 4 kolena nebo 10 kg žeber" required>
+            </div>
+            <div class="fgroup full">
+              <label for="f-poznamka">Poznámka (nepovinná)</label>
+              <textarea id="f-poznamka" name="Poznámka"></textarea>
             </div>
           </div>
           <p class="form-note">Údaje z formuláře použijeme jen k vyřízení vaší poptávky. K nám se dostanou e-mailem přes službu FormSubmit.</p>
@@ -237,7 +265,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Hospůdka u Kleinů. Všechna práva vyhrazena.</span>
+      <span>© 2026 Hospůdka u Kleinů · IČO 11890878</span>
       <span>Vytvořil Adam Biely</span>
     </div>
   </div>
