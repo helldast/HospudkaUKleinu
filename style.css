@@ -230,14 +230,16 @@
     .sec-header .divider { margin: 14px auto 0; }
 
     /* jump to a part of the menu: stays under the header while scrolling */
-    .menu-skok {
+    .menu-lista {
       position: sticky; top: var(--nav-h); z-index: 50;
-      display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
       margin: -20px -24px 24px; padding: 12px 24px; background: var(--white);
       border-bottom: 1px solid var(--border);
     }
+    .menu-skok { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
     .menu-skok::-webkit-scrollbar { display: none; }
     .menu-skok:empty { display: none; }
+    .menu-tabs { display: none; }
+    @media (min-width: 921px) { .menu-lista:has(.menu-skok:empty) { display: none; } }
     .menu-skok a {
       flex: none; padding: 8px 16px; min-height: 40px; display: inline-flex; align-items: center;
       font-size: .92rem; font-weight: 500; color: var(--text); text-decoration: none; white-space: nowrap;
@@ -287,6 +289,30 @@
     @media (min-width: 921px) {
       .menu-book { display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; padding: 52px 60px 40px; align-items: start; }
       .menu-col + .menu-col .menu-col-h { margin-top: 0; }
+    }
+
+    /* PHONE & TABLET: Nápoje / Jídlo buttons, one list at a time */
+    @media (max-width: 920px) {
+      .menu-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: -4px 0 12px; border-bottom: 1px solid var(--border); }
+      .menu-tab {
+        min-height: 46px; padding: 8px; margin-bottom: -1px; cursor: pointer;
+        font: 600 1.02rem var(--font-b); color: var(--muted); background: none;
+        border: none; border-bottom: 3px solid transparent; transition: color .2s, border-color .2s;
+      }
+      .menu-tab:hover { color: var(--dark); }
+      .menu-tab[aria-selected="true"] { color: var(--dark); border-bottom-color: var(--gold-deep); }
+      .menu-tab:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: -2px; }
+      .menu-col-h { display: none; }
+      #menu[data-tab="napoje"] #col-jidlo, #menu[data-tab="jidlo"] #col-napoje { display: none; }
+      #menu[data-tab="napoje"] .menu-skok a[data-col="jidlo"], #menu[data-tab="jidlo"] .menu-skok a[data-col="napoje"] { display: none; }
+      #menu[data-tab="napoje"] .menu-skok:not(:has(a[data-col="napoje"])),
+      #menu[data-tab="jidlo"] .menu-skok:not(:has(a[data-col="jidlo"])) { display: none; }
+      .mskup { scroll-margin-top: calc(var(--nav-h) + 130px); }
+    }
+    /* long lists without prices (spirits): two columns of names on the phone */
+    @media (max-width: 600px) {
+      .menu-book .mlist-2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+      .menu-book .mlist-2 .mitem-name { font-size: 1.08rem; }
     }
 
     /* LÍSTEK: the waiter's tally slip */
@@ -550,7 +576,7 @@
       section { padding: 68px 20px; }
       .hero-btns { flex-direction: column; align-items: center; }
       .footer-top { grid-template-columns: 1fr; }
-      .menu-skok { margin: -12px -20px 20px; padding: 10px 20px; }
+      .menu-lista { margin: -12px -20px 20px; padding: 10px 20px; }
       .rc-card { padding: 26px 24px; }
       .photo-mosaic { grid-template-columns: 1fr; }
       .ev-main, .ev-main.has-photo { grid-template-columns: 1fr; padding: 24px; }
@@ -615,6 +641,8 @@
       .footer-col ul { flex-direction: row; flex-wrap: wrap; gap: 4px 8px; }
       .footer-col:nth-child(2) { display: none; }
       .footer-col:not(:nth-child(2)) ul { gap: 4px 0; }
+      .footer-col ul li.js-tel-row { flex-basis: 100%; }
+      .footer-col ul li.js-tel-row::before { content: none !important; }
       .footer-col:not(:nth-child(2)) ul li + li::before { content: '·'; margin: 0 8px; color: rgba(255,255,255,.5); }
       .footer-col ul span { color: rgba(255,255,255,.78); }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 4px; }

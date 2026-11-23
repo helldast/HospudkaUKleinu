@@ -60,19 +60,26 @@
 
 <!-- ══════════════ MENU ══════════════ -->
 <main>
-<section id="menu">
+<section id="menu" data-tab="napoje">
   <div class="container">
     <div class="sec-header">
       <h1 class="title">Menu</h1>
       <div class="divider"></div>
     </div>
 
-    <!-- skok na část menu, vyplní se z menu.js -->
-    <nav class="menu-skok" id="menuSkok" aria-label="Části menu"></nav>
+    <div class="menu-lista">
+      <!-- na telefonu dvě tlačítka: nápoje / jídlo (na PC jsou vidět oba sloupce) -->
+      <div class="menu-tabs" role="tablist" aria-label="Část menu">
+        <button type="button" class="menu-tab" role="tab" id="tab-napoje" data-tab="napoje" aria-controls="col-napoje" aria-selected="true">Nápoje</button>
+        <button type="button" class="menu-tab" role="tab" id="tab-jidlo" data-tab="jidlo" aria-controls="col-jidlo" aria-selected="false" tabindex="-1">Jídlo</button>
+      </div>
+      <!-- skok na část menu, vyplní se z menu.js -->
+      <nav class="menu-skok" id="menuSkok" aria-label="Části menu"></nav>
+    </div>
 
     <!-- Na PC dva sloupce: nápoje a jídlo. Obsah je v souboru menu.js -->
     <div class="menu-book">
-      <div class="menu-col">
+      <div class="menu-col" id="col-napoje">
         <h2 class="menu-col-h">Nápoje</h2>
         <div id="menuNapoje"></div>
         <!-- LÍSTEK: čárkovací lístek, jde smazat celý až po KONEC LÍSTKU -->
@@ -88,7 +95,7 @@
         </div>
         <!-- KONEC LÍSTKU -->
       </div>
-      <div class="menu-col">
+      <div class="menu-col" id="col-jidlo">
         <h2 class="menu-col-h">Jídlo</h2>
         <div id="menuJidlo"></div>
       </div>

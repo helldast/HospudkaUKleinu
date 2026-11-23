@@ -47,8 +47,7 @@ window.MENU = {
     {
       skupina: "Víno",
       polozky: [
-        { nazev: "Rozlévané víno", popis: "suché", objem: "", cena: "" },
-        { nazev: "Rozlévané víno", popis: "polosuché", objem: "", cena: "" },
+        { nazev: "Rozlévané víno", popis: "suché, polosuché", objem: "", cena: "" },
         { nazev: "Prosecco", popis: "", objem: "", cena: "" },
       ]
     },

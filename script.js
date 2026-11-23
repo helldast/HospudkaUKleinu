@@ -91,7 +91,7 @@
    const skupina = (g) => `
      <div class="mskup" id="${slug(g.skupina)}">
        <h3 class="menu-h">${esc(g.skupina)}</h3>
-       <div class="mlist">${g.polozky.filter((p) => p && p.nazev).map((p) => {
+       <div class="mlist${g.polozky.length >= 8 && !g.polozky.some((p) => p && kc(p.cena)) ? ' mlist-2' : ''}">${g.polozky.filter((p) => p && p.nazev).map((p) => {
          const detail = [p.popis, p.objem].filter(Boolean).join(' · ');
          const cena = kc(p.cena);
          return `
@@ -115,8 +115,34 @@
    const listek = document.querySelector('.listek');
    if (listek && pivo) $(slug(pivo.skupina)).after(listek);
 
-   const vse = [...napoje, ...jidlo];
-   if (vse.length > 1) $('menuSkok').innerHTML = vse.map((g) => `<a href="#${slug(g.skupina)}">${esc(g.skupina)}</a>`).join('');
+   const vse = [...napoje.map((g) => [g, 'napoje']), ...jidlo.map((g) => [g, 'jidlo'])];
+   if (vse.length > 1) $('menuSkok').innerHTML = vse.map(([g, col]) => `<a href="#${slug(g.skupina)}" data-col="${col}">${esc(g.skupina)}</a>`).join('');
+
+   // phone: the Nápoje / Jídlo buttons show one list at a time; #napoje / #jidlo links open the right one
+   const sec = $('menu'), tabs = [...document.querySelectorAll('.menu-tab')];
+   const ukazMenu = (id, jak) => {
+     sec.dataset.tab = id;
+     tabs.forEach((t) => {
+       const on = t.dataset.tab === id;
+       t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+       if (on && jak === 'klavesa') t.focus();
+     });
+     if (!jak) return;
+     history.replaceState(null, '', '#' + id);
+     // scrolled down the other list: go back to the top of the menu
+     const book = document.querySelector('.menu-book'), lista = document.querySelector('.menu-lista');
+     const y = book.getBoundingClientRect().top + scrollY - lista.offsetHeight - nav.offsetHeight;
+     if (scrollY > y) window.scrollTo({ top: y });
+   };
+   tabs.forEach((t, i) => {
+     t.addEventListener('click', () => ukazMenu(t.dataset.tab, 'klik'));
+     t.addEventListener('keydown', (e) => {
+       const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+       if (k) { e.preventDefault(); ukazMenu(tabs[(i + k + tabs.length) % tabs.length].dataset.tab, 'klavesa'); }
+     });
+   });
+   const h = location.hash.slice(1);
+   ukazMenu(h === 'jidlo' || jidlo.some((g) => slug(g.skupina) === h) ? 'jidlo' : 'napoje');
    if (M.poznamka) { $('menuPozn').textContent = M.poznamka; $('menuPozn').hidden = false; }
  })();
 
