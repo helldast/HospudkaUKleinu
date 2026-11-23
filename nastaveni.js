@@ -5,10 +5,12 @@
 window.WEB = {
 
   /* ── KONTAKT ───────────────────────────────────────────────────
-     Na "email" chodí poptávky z formuláře. Dokud je prázdný, formulář
-     je vypnutý. Po první poptávce přijde na tento e-mail od FormSubmit
-     potvrzení, které je potřeba jednou odkliknout. */
+     email    = e-mail, který se ukazuje v kontaktu
+     formKlic = přístupový klíč z web3forms.com; rezervace a poptávky
+                z formulářů chodí na e-mail, pro který byl klíč vytvořen.
+                Dokud je prázdný, formuláře jsou vypnuté. */
   email: "hospudkaukleinu@seznam.cz",
+  formKlic: "e991402a-7dbd-429a-930f-855e6dadaf71",
   telefon: "+420 721 003 707",
 
   /* Datum znovuotevření. Do tohoto dne web ukazuje, že se otevírá. */

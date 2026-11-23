@@ -329,7 +329,7 @@
    $('rowMail').hidden = false;
  }
 
- /* --- FORMS: table reservation and food order, both sent by email through FormSubmit --- */
+ /* --- FORMS: table reservation and food order, both sent by email through Web3Forms --- */
  const formBox = document.querySelector('.form-box');
  if (formBox) {
    /* the two buttons switch which form is shown; #rezervace / #jidlo links open the right one */
@@ -357,8 +357,8 @@
    const forms = [...document.querySelectorAll('.pform')];
    document.querySelectorAll('.pform input[type="date"]').forEach((d) => d.setAttribute('min', today));
 
-   /* no address yet: say so up front rather than after the visitor has typed */
-   if (!WEB.email) {
+   /* no key yet: say so up front rather than after the visitor has typed */
+   if (!WEB.formKlic) {
      forms.forEach((f) => f.querySelectorAll('input, select, textarea, button').forEach((el) => { el.disabled = true; }));
      const off = $('formOff');
      off.textContent = 'Rezervace a poptávky spouštíme už brzy.';
@@ -386,13 +386,21 @@
        btn.textContent = 'Odesílám…';
        try {
          // empty optional fields are left out of the email
-         const data = Object.fromEntries([...new FormData(form)].filter(([k, v]) => v !== '' || k === '_honey'));
-         const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(WEB.email)}`, {
+         const { _subject, _honey, ...data } = Object.fromEntries([...new FormData(form)].filter(([, v]) => v !== ''));
+         const res = await fetch('https://api.web3forms.com/submit', {
            method: 'POST',
            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-           body: JSON.stringify({ ...data, _template: 'table', _captcha: 'false' })
+           body: JSON.stringify({
+             access_key: WEB.formKlic,
+             subject: _subject,
+             from_name: 'Web Hospůdky u Kleinů',
+             botcheck: _honey || '',          // filled only by bots
+             ...(data.Email ? { replyto: data.Email } : {}),   // "Odpovědět" goes to the guest
+             ...data
+           })
          });
-         if (!res.ok) throw new Error(res.status);
+         const out = await res.json().catch(() => ({}));
+         if (!res.ok || !out.success) throw new Error(out.message || res.status);
          form.reset();
          say.textContent = DIKY[form.id];
        } catch (err) {
