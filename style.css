@@ -164,7 +164,8 @@
     }
     /* with a real photo: show it clearer, with navy over it so the text stays readable */
     .hero-img[style] { opacity: 1; background-image: var(--foto); }
-    .hero-under { margin-top: calc(-1 * var(--nav-h)); min-height: calc(100vh - var(--strip-h)); }
+    /* tall screens (tablet upright) would leave empty space around the board, so the hero stops growing at 860px */
+    .hero-under { margin-top: calc(-1 * var(--nav-h)); min-height: min(calc(100vh - var(--strip-h)), 860px); }
     .hero-under .hero-content { padding-top: calc(80px + var(--nav-h)); }
     /* a soft dark band at the very top so the menu text stays readable on the light ceiling */
     .hero-under .hero-img[style]::before {
@@ -597,13 +598,13 @@
     /* ─── PHONE & TABLET: shorter page ─── */
     @media (max-width: 920px) {
       /* hero: the photo shows at the top and fades into navy under the text */
-      .hero { min-height: 0; background: #1A1E3C; }
+      .hero { min-height: 0; padding-bottom: 0; background: #1A1E3C; }
       .hero:has(.hero-img[style])::before { display: none; }
       .hero-img[style] { bottom: auto; height: 340px; background-image: var(--foto-m, var(--foto)); background-position: center 30%; background-size: cover; }
       .hero-img[style]::after {
         background: linear-gradient(180deg, rgba(26,30,60,.15) 0%, rgba(26,30,60,.45) 45%, rgba(26,30,60,.85) 75%, #1A1E3C 100%);
       }
-      .hero-content { padding: 170px 20px 36px; }
+      .hero-content { padding: 170px 20px 44px; }
       .hero-under .hero-img[style] { height: calc(340px + var(--nav-h)); }
       .hero-under .hero-content { padding-top: calc(170px + var(--nav-h)); }
       .hero h1 { font-size: 2.4rem; margin-bottom: 12px; text-shadow: 0 2px 14px rgba(0,0,0,.45); }
@@ -637,7 +638,22 @@
       .photo-mosaic .ph { flex: 0 0 78%; max-width: 340px; aspect-ratio: 4/5; grid-row: auto; scroll-snap-align: start; }
       .ph[style] { background-image: var(--foto-m, var(--foto)); }
     }
+    /* tablet: the small phone photo would be stretched and blurry, so use the full one */
+    @media (min-width: 601px) and (max-width: 920px) {
+      .hero-img[style] { background-image: var(--foto); }
+    }
     @media (max-width: 600px) {
+      /* phone: tighter board, so most of it fits on the first screen */
+      .hero-tap { margin-top: 24px; }
+      .hero-under .hero-img[style] { height: calc(310px + var(--nav-h)); }
+      .hero-under .hero-content { padding-top: calc(140px + var(--nav-h)); }
+      .tabule { padding: 12px 16px 10px; }
+      .tabule-h { font-size: 1.6rem; margin-bottom: 0; }
+      .tabule-list li { padding: 4px 0; }
+      .t-name, .t-deg { font-size: 1rem; }
+      .t-name small { font-size: .74rem; }
+      .tabule-cas { margin-top: 4px; padding-top: 7px; font-size: .8rem; }
+
       .photo-mosaic { margin: 0 -20px; padding: 0 20px 4px; scroll-padding: 0 20px; }
       .photo-mosaic .ph, .ph:nth-child(1), .ph:nth-child(2), .ph:nth-child(3) { aspect-ratio: 4/5; }
 
