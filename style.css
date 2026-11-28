@@ -361,8 +361,16 @@
     .ev-name { font-family: var(--font-d); font-size: clamp(1.7rem,3.4vw,2.5rem); font-weight: 700; line-height: 1.1; }
     .ev-desc { margin-top: 8px; color: var(--muted); }
     .ev-meta { margin-top: 10px; font-size: .9rem; font-weight: 600; color: var(--copper); }
+    .ev-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .ev-rez {
+      display: inline-flex; align-items: center; padding: 8px 16px; min-height: 40px;
+      font: 600 .9rem var(--font-b); color: var(--dark); background: var(--gold-deep);
+      border-radius: 8px; text-decoration: none; transition: background .2s;
+    }
+    .ev-rez:hover { background: var(--gold); }
+    .ev-rez:focus-visible, .ev-plakat:focus-visible { outline: 2px solid var(--dark); outline-offset: 2px; }
     .ev-plakat {
-      display: inline-block; margin-top: 12px; padding: 8px 14px; min-height: 40px;
+      display: inline-block; padding: 8px 14px; min-height: 40px;
       font: 500 .9rem var(--font-b); color: var(--dark); background: none;
       border: 1px solid #A9A79F; border-radius: 8px; cursor: pointer; transition: background .2s;
     }

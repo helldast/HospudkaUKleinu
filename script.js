@@ -169,7 +169,10 @@
          <h3 class="ev-name">${esc(a.nazev)}</h3>
          ${a.popis ? `<p class="ev-desc">${esc(a.popis)}</p>` : ''}
          ${meta ? `<p class="ev-meta">${esc(meta)}</p>` : ''}
-         <button type="button" class="ev-plakat" id="evPlakat">Stáhnout plakát</button>
+         <div class="ev-btns">
+           ${a.rezervace ? `<a class="ev-rez" href="/rezervace?${new URLSearchParams({ datum: a.datum, cas: ((a.cas || '').match(/\d{1,2}:\d{2}/) || [''])[0], pozn: a.rezervace })}">Rezervovat porce</a>` : ''}
+           <button type="button" class="ev-plakat" id="evPlakat">Stáhnout plakát</button>
+         </div>
        </div>
        ${a.foto ? `<img class="ev-photo" src="${esc(a.foto)}" alt="${esc(a.nazev)}" loading="lazy">` : ''}
      </article>
@@ -379,6 +382,16 @@
      });
    });
    ukaz(location.hash === '#jidlo' ? 'jidlo' : 'rezervace', false, true);
+
+   /* came from an event's "Rezervovat" button: fill in its date, time and note */
+   const q = new URLSearchParams(location.search);
+   if (q.has('pozn') || q.has('datum')) {
+     const d = q.get('datum'), c = q.get('cas'), pozn = q.get('pozn');
+     if (validDate(d) && d >= today) $('r-datum').value = d;
+     if (c && [...$('r-cas').options].some((o) => o.value === c)) $('r-cas').value = c;
+     if (pozn) $('r-poznamka').value = pozn;
+     history.replaceState(null, '', location.pathname);
+   }
 
    const forms = [...document.querySelectorAll('.pform')];
    document.querySelectorAll('.pform input[type="date"]').forEach((d) => d.setAttribute('min', today));

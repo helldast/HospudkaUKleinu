@@ -27,7 +27,9 @@ window.WEB = {
        cas: "od 16:00",              // nepovinné
        popis: "Čerstvá makrela z grilu, dokud nedojde.",   // nepovinné
        cena: "189 Kč",               // nepovinné
-       foto: "assets/makrela.jpg"    // nepovinné
+       foto: "assets/makrela.jpg",   // nepovinné
+       rezervace: "Makrela – počet porcí: "   // nepovinné: přidá tlačítko „Rezervovat porce“,
+                                               // které otevře rezervaci stolu s tímto textem v poznámce
      },
   */
   akce: [
@@ -38,6 +40,15 @@ window.WEB = {
       popis: "Nový interiér a jednotná cena piva 38 Kč po celý víkend",
       cena: "",
       foto: ""
+    },
+    {
+      nazev: "Plněné bůčkové rolády",
+      datum: "2026-12-05",
+      cas: "od 17:00",
+      popis: "Bůček plněný čedarem a parmazánem, k tomu bramborová kaše. Porce si raději rezervujte – při rezervaci stolu napište do poznámky, kolik jich chcete.",
+      cena: "",
+      foto: "",
+      rezervace: "Plněné rolády – počet porcí: "
     },
     {
       nazev: "Kolena, saxofon a mistr za pípou",
