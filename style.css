@@ -456,6 +456,9 @@
     .fgroup select option { background: #272C52; color: #FFFFFF; }
     .fgroup :disabled { opacity: .55; cursor: not-allowed; }
     .fgroup input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(.7); cursor: pointer; }
+    /* iPhone Safari draws the date box at its own width and spills out of the form: make it a normal field */
+    .fgroup input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-height: 47px; }
+    .fgroup input[type="date"]::-webkit-date-and-time-value { text-align: left; }
     .fgroup input:focus, .fgroup select:focus, .fgroup textarea:focus {
       border-color: var(--gold-deep); background: rgba(255,255,255,.1);
     }
@@ -597,7 +600,10 @@
       .rc-card { padding: 26px 24px; }
       .photo-mosaic { grid-template-columns: 1fr; }
       .ev-main, .ev-main.has-photo { grid-template-columns: 1fr; padding: 24px; }
-      .ev-date { justify-self: start; }
+      /* date as a compact strip on the left: number, then month and day beside it */
+      .ev-date { justify-self: start; display: flex; align-items: center; gap: 12px; min-width: 0; padding: 10px 16px; }
+      .ev-day { font-size: 2.4rem; }
+      .ev-mon { margin-top: 0; text-align: left; line-height: 1.35; }
       .nav-logo { font-size: 1.2rem; gap: 10px; }
       .logo-shield { width: 68px; margin-top: 4px; }
       .nav.up .logo-shield { width: 50px; margin-top: 3px; }
